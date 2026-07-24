@@ -42,7 +42,9 @@
     <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- ── Favicon ─────────────────────────────────────────────── --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logos/archon-footer-logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logos/archon-footer-logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logos/archon-footer-logo.png') }}">
 
     {{-- ── Vite: CSS + JS assets ──────────────────────────────── --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -74,6 +76,9 @@
 
     {{-- ── Footer ──────────────────────────────────────────────── --}}
     @include('components.footer')
+
+    {{-- ── Terms & Privacy Legal Modal ──────────────────────────── --}}
+    @include('components.legal-modal')
 
     {{-- ── Page-level scripts (optional) ─────────────────────── --}}
     @stack('scripts')

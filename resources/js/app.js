@@ -18,6 +18,7 @@ import './bootstrap';
 import { initNavbar }       from './components/navbar';
 import { initSmoothScroll } from './components/smooth-scroll';
 import { initAccordion }    from './components/accordion';
+import { initLegalModal }   from './components/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -29,5 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Initialize services accordion */
     initAccordion();
+
+    /* Initialize Terms & Privacy legal modal */
+    initLegalModal();
 
 });

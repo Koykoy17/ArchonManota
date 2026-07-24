@@ -131,7 +131,7 @@
                         <div class="quote__checkbox-field">
                             <label class="quote__checkbox-label">
                                 <input type="checkbox" name="terms" value="1" class="quote__checkbox" {{ old('terms') ? 'checked' : '' }} required>
-                                <span class="quote__checkbox-text">I accept the privacy and terms.</span>
+                                <span class="quote__checkbox-text">I accept the <a href="#privacy" class="open-legal-modal" style="color: #CB9F53; text-decoration: underline;">privacy and terms</a>.</span>
                             </label>
                             @error('terms')
                                 <span class="quote__field-error d-block">{{ $message }}</span>

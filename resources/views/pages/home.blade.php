@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-{{-- ── Page title ──────────────────────────────────────────────── --}}
-@section('title', config('app.name', 'Archon'))
+@section('title', 'Archon  |  Moving Life Forward')
 
 {{-- ── SEO meta ─────────────────────────────────────────────────── --}}
 @section('meta_description', 'Archon — placeholder meta description. Phase 3 will populate this.')
