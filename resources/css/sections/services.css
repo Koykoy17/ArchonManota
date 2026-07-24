@@ -1,0 +1,20 @@
+/*
+ * resources/css/sections/services.css
+ * ──────────────────────────────────────────────────────────
+ * Styles for the Services showcase section.
+ *
+ * View: resources/views/sections/services.blade.php
+ *
+ * Key selectors (to be defined):
+ *   #services
+ *   .services__inner
+ *   .services__header
+ *   .services__title
+ *   .services__grid
+ *
+ * TODO:
+ *   - Responsive CSS grid for service cards
+ *   - Alternating background colour between sections for visual rhythm
+ *   - Section header with icon accent
+ *   - Card component styles live in components/cards.css
+ */

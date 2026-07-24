@@ -1,0 +1,34 @@
+/*
+ * resources/css/app.css
+ * ─────────────────────────────────────────────────────────────────
+ * Main CSS Entry Point — bundled by Vite.
+ * Import order: base → layout → sections → components → responsive
+ * ─────────────────────────────────────────────────────────────────
+ */
+
+/* ── Base ───────────────────────────────────────────────────────── */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+@import './layout/navbar.css';
+@import './layout/footer.css';
+
+/* ── Sections (content added in future phases) ──────────────────── */
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/quote.css';
+@import './sections/products.css';
+@import './sections/services.css';
+@import './sections/articles.css';
+
+/* ── Components (content added in future phases) ────────────────── */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/forms.css';
+
+/* ── Responsive (content added in future phases) ────────────────── */
+@import './responsive/desktop.css';
+@import './responsive/tablet.css';
+@import './responsive/mobile.css';

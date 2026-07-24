@@ -1,0 +1,27 @@
+/*
+ * resources/css/components/buttons.css
+ * ──────────────────────────────────────────────────────────
+ * Reusable button component styles.
+ *
+ * Component: resources/views/components/button.blade.php
+ *
+ * BEM structure:
+ *   .btn                   Base button styles
+ *   .btn--primary          Brand primary fill
+ *   .btn--secondary        Brand secondary fill
+ *   .btn--outline          Transparent with border
+ *   .btn--ghost            No background, no border
+ *   .btn--sm               Small size modifier
+ *   .btn--md               Medium size modifier (default)
+ *   .btn--lg               Large size modifier
+ *   .btn--loading          Loading/spinner state
+ *   .btn--icon             Icon-only square button
+ *
+ * TODO:
+ *   - Base: display flex, align-items center, gap for icon + label
+ *   - Padding, border-radius from var(--radius-md), var(--space-*)
+ *   - Transition: background, color, box-shadow via var(--transition-fast)
+ *   - :hover, :focus-visible, :active states for each variant
+ *   - :disabled state: opacity + cursor not-allowed
+ *   - Loading state: hide label, show CSS spinner pseudo-element
+ */

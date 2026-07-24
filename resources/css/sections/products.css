@@ -1,0 +1,21 @@
+/*
+ * resources/css/sections/products.css
+ * ──────────────────────────────────────────────────────────
+ * Styles for the Products showcase section.
+ *
+ * View: resources/views/sections/products.blade.php
+ *
+ * Key selectors (to be defined):
+ *   #products
+ *   .products__inner
+ *   .products__header
+ *   .products__title
+ *   .products__grid
+ *   .products__cta
+ *
+ * TODO:
+ *   - Responsive CSS grid: 1 col (mobile) → 2 col (tablet) → 3 col (desktop)
+ *   - Section header centered with subtitle
+ *   - "View All" CTA link below grid
+ *   - Card component styles live in components/cards.css
+ */

@@ -1,0 +1,22 @@
+/*
+ * resources/css/responsive/mobile.css
+ * ──────────────────────────────────────────────────────────
+ * Mobile-specific overrides (below tablet breakpoint).
+ * Breakpoint: max-width: 639px
+ *
+ * Strategy: Mobile-first means base styles ARE the mobile styles.
+ * Use this file only for tweaks that cannot be expressed in the
+ * base styles without overriding tablet/desktop later.
+ *
+ * TODO:
+ *   - Ensure all grids are single-column
+ *   - Navbar: hamburger menu visible, links hidden by default
+ *   - Hero: reduce font sizes, stack CTA buttons vertically
+ *   - About: full-width image above text content
+ *   - Footer: single column, stacked link groups
+ *   - Reduce section vertical padding for smaller screens
+ *   - Touch targets: min 44×44px for all interactive elements
+ *
+ * Example wrapper:
+ *   @media (max-width: 639px) { ... }
+ */

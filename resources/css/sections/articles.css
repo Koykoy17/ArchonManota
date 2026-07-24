@@ -1,0 +1,21 @@
+/*
+ * resources/css/sections/articles.css
+ * ──────────────────────────────────────────────────────────
+ * Styles for the Articles preview section.
+ *
+ * View: resources/views/sections/articles.blade.php
+ *
+ * Key selectors (to be defined):
+ *   #articles
+ *   .articles__inner
+ *   .articles__header
+ *   .articles__title
+ *   .articles__grid
+ *   .articles__cta
+ *
+ * TODO:
+ *   - Three-column article card grid (collapses on mobile)
+ *   - Section header with "Latest Articles" or similar label
+ *   - "Read More" CTA below grid
+ *   - Card component styles live in components/cards.css
+ */

@@ -1,0 +1,30 @@
+/*
+ * resources/css/sections/quote.css
+ * ──────────────────────────────────────────────────────────
+ * Styles for the Quote request form section.
+ *
+ * View: resources/views/sections/quote.blade.php
+ *
+ * Key selectors (to be defined):
+ *   #quote
+ *   .quote__inner
+ *   .quote__header
+ *   .quote__title
+ *   .quote__subtitle
+ *   .quote__form
+ *   .quote__form-row
+ *   .quote__field
+ *   .quote__label
+ *   .quote__input
+ *   .quote__textarea
+ *   .quote__error
+ *   .quote__submit
+ *   .quote__success
+ *
+ * TODO:
+ *   - Centered form layout with max-width constraint
+ *   - Input / textarea focus states with brand colour ring
+ *   - Error state styling (red border, error message)
+ *   - Success state / flash notification styling
+ *   - Background: subtle gradient or image overlay
+ */

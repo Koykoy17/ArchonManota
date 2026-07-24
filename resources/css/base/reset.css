@@ -1,0 +1,166 @@
+/*
+ * resources/css/base/reset.css
+ * ─────────────────────────────────────────────────────────────────
+ * Modern CSS Reset
+ * Based on Andy Bell's reset + Josh Comeau's additions.
+ * Eliminates cross-browser inconsistencies before design tokens apply.
+ * ─────────────────────────────────────────────────────────────────
+ */
+
+/* ── Box sizing ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ── Root & document ────────────────────────────────────────────── */
+html {
+    font-size: 100%; /* 1rem = 16px baseline */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    tab-size: 4;
+    hanging-punctuation: first last;
+}
+
+/* ── Remove default margin / padding ───────────────────────────── */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+menu,
+fieldset,
+legend {
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Body ───────────────────────────────────────────────────────── */
+body {
+    min-height: 100dvh;
+    line-height: var(--line-height-normal, 1.5);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Lists ──────────────────────────────────────────────────────── */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* ── Media ──────────────────────────────────────────────────────── */
+img,
+video,
+svg,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p,
+li,
+figcaption {
+    overflow-wrap: break-word;
+    max-width: 65ch; /* Optimal line length for readability */
+}
+
+/* Allow max-width override within layout containers */
+.no-max-width,
+[class*="__"] p,
+[class*="__"] li {
+    max-width: unset;
+}
+
+/* ── Forms ──────────────────────────────────────────────────────── */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+input,
+textarea,
+select {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset {
+    border: none;
+}
+
+/* ── Links ──────────────────────────────────────────────────────── */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── Focus visible (accessibility) ─────────────────────────────── */
+:focus-visible {
+    outline: var(--border-width-thick, 2px) solid var(--color-primary, #1a56db);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm, 4px);
+}
+
+/* Remove focus ring for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────── */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ── Hidden utility ─────────────────────────────────────────────── */
+[hidden] {
+    display: none !important;
+}
+
+/* ── Reduce motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

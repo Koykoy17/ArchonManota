@@ -1,0 +1,25 @@
+/*
+ * resources/css/components/forms.css
+ * ──────────────────────────────────────────────────────────
+ * Shared form element styles (inputs, selects, textareas, labels).
+ *
+ * Used by: sections/quote.css (imports these base styles)
+ *
+ * Key selectors (to be defined):
+ *   .form-group            Label + input wrapper
+ *   .form-label            <label> element style
+ *   .form-control          Shared: input, select, textarea
+ *   .form-control--error   Invalid field state
+ *   .form-error            Error message text below field
+ *   .form-hint             Helper text below field
+ *   .form-row              Horizontal field grouping
+ *
+ * TODO:
+ *   - Consistent height, padding, border for all form-control types
+ *   - Focus ring using outline + var(--color-primary) for accessibility
+ *   - Error state: red border + background tint
+ *   - Textarea: min-height, resize: vertical only
+ *   - Select: custom arrow via background-image (hide native)
+ *   - Placeholder colour: var(--color-text-muted)
+ *   - Disabled state: reduced opacity, cursor not-allowed
+ */

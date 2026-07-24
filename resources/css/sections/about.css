@@ -1,0 +1,27 @@
+/*
+ * resources/css/sections/about.css
+ * ──────────────────────────────────────────────────────────
+ * Styles for the About section.
+ *
+ * View: resources/views/sections/about.blade.php
+ *
+ * Key selectors (to be defined):
+ *   #about
+ *   .about__inner
+ *   .about__image-col
+ *   .about__image
+ *   .about__content-col
+ *   .about__title
+ *   .about__description
+ *   .about__stats
+ *   .about__stat
+ *   .about__stat-value
+ *   .about__stat-label
+ *
+ * TODO:
+ *   - Two-column CSS grid (image | content)
+ *   - Image with rounded corners and subtle drop shadow
+ *   - Stats displayed in a horizontal row with large numeric values
+ *   - Scroll-reveal animation on first viewport entry
+ *   - Alternating layout option (content | image) for reuse
+ */

@@ -1,0 +1,20 @@
+/*
+ * resources/css/responsive/desktop.css
+ * ──────────────────────────────────────────────────────────
+ * Desktop-specific overrides and enhancements.
+ * Breakpoint: min-width: 1024px (or custom --breakpoint-lg)
+ *
+ * Strategy: Mobile-first. This file contains styles that ENHANCE
+ * the layout at large viewport widths.
+ *
+ * TODO:
+ *   - Expand multi-column grids to maximum column counts
+ *   - Increase container max-width to var(--container-max-width)
+ *   - Enable hover-only effects (not needed on touch devices)
+ *   - Show desktop-only navigation elements (full link list)
+ *   - Adjust hero section to side-by-side layout if applicable
+ *   - Enable parallax or advanced animation effects
+ *
+ * Example wrapper:
+ *   @media (min-width: 1024px) { ... }
+ */

@@ -1,0 +1,14 @@
+color hex
+
+#151616 - bg color theme
+
+#9D0211 - red
+#CB9F53 - gold
+#272727 - grayish black
+
+#D95B40 - reddish
+#293378 - dim blue
+
+Font Style
+
+- Poppins

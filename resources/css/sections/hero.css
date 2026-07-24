@@ -1,0 +1,316 @@
+/*
+ * resources/css/sections/hero.css
+ * ─────────────────────────────────────────────────────────────────
+ * Hero Section — Exact Spec Styling & Precise Positioning
+ * ─────────────────────────────────────────────────────────────────
+ */
+
+/* ── Section Root ────────────────────────────────────────────────── */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background-color: #151616;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Background Layer ───────────────────────────────────────────── */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+}
+
+.hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg,
+            rgba(21, 22, 22, 0.98) 0%,
+            rgba(21, 22, 22, 0.92) 35%,
+            rgba(21, 22, 22, 0.65) 55%,
+            rgba(21, 22, 22, 0.25) 75%,
+            rgba(21, 22, 22, 0.05) 100%);
+    z-index: 1;
+}
+
+/* ── Inner Layout Container (Moved UPWARDS right below navbar) ──── */
+.hero__inner {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: var(--container-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding-top: calc(80px + 0.5rem);
+    /* Moved UPWARDS closer to navbar */
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding-bottom: 2rem;
+    flex: 1;
+}
+
+/* ── Left Content Column (Sized to avoid overlapping truck image) ─ */
+.hero__content {
+    flex: 0 0 50%;
+    max-width: 540px;
+    /* Clean width to prevent overlapping truck photo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headline */
+.hero__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-heading);
+    font-size: 70px;
+    /* Clean size to fit left region */
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.hero__line {
+    display: block;
+    white-space: nowrap;
+}
+
+.hero__word--white {
+    color: #ffffff;
+}
+
+.hero__word--red {
+    color: #9D0211;
+    font-style: normal;
+}
+
+.hero__line--white {
+    color: #ffffff;
+}
+
+.hero__line--gold {
+    color: #CB9F53;
+}
+
+/* Navigation Arrows (Shifted RIGHTWARDS as requested) */
+.hero__arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 60px;
+}
+
+.hero__arrow svg * {
+    stroke-width: 4.5px;
+}
+
+.hero__arrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__arrow--next {
+    margin-left: 240px;
+    /* Shifted RIGHTWARDS */
+}
+
+.hero__arrow--prev {
+    margin-left: 180px;
+    /* Shifted RIGHTWARDS */
+}
+
+.hero__arrow:hover {
+    color: #CB9F53;
+}
+
+/* Left Paragraph */
+.hero__description {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 360px;
+    margin: 0 0 1.25rem 0;
+}
+
+/* Watch Video CTA (Gold Spec) */
+.hero__watch {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.hero__watch-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #CB9F53;
+    background-color: transparent;
+    flex-shrink: 0;
+}
+
+.hero__watch-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #CB9F53;
+}
+
+.hero__watch:hover {
+    opacity: 0.85;
+}
+
+/* ── Right Top Block (Paragraph + Request Quote CTA - Moved UP) ──── */
+.hero__aside {
+    flex: 0 0 auto;
+    max-width: 250px;
+    margin-left: 2rem;
+}
+
+.hero__top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.hero__top-bar-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+.hero__quote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 26px;
+    background-color: #9D0211;
+    color: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__quote-btn:hover {
+    background-color: #7a0110;
+    transform: translateY(-1px);
+}
+
+/* ── ABSOLUTE TRUCK BANNER CARD (img-banner.png / hero-truck.png) ─── */
+.hero__truck-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 58%;
+    max-width: 900px;
+    border-top-left-radius: 40px;
+    overflow: hidden;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.hero__truck-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 40px;
+    object-fit: cover;
+}
+
+/* ── Responsive Overrides ───────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .hero__truck-card {
+        width: 54%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__headline {
+        font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    }
+
+    .hero__arrow--next {
+        margin-left: 160px;
+    }
+
+    .hero__arrow--prev {
+        margin-left: 110px;
+    }
+
+    .hero__truck-card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__inner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero__content,
+    .hero__aside {
+        flex: none;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .hero__arrows {
+        margin-top: 1rem;
+    }
+
+    .hero__arrow--next,
+    .hero__arrow--prev {
+        margin-left: 0;
+    }
+
+    .hero__truck-card {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        right: auto;
+        bottom: auto;
+        margin-top: 2rem;
+        border-top-left-radius: 24px;
+    }
+
+    .hero__truck-img {
+        border-top-left-radius: 24px;
+    }
+
+    .hero__line {
+        white-space: normal;
+    }
+}

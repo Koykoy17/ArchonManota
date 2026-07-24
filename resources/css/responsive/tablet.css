@@ -1,0 +1,20 @@
+/*
+ * resources/css/responsive/tablet.css
+ * ──────────────────────────────────────────────────────────
+ * Tablet-specific layout adjustments.
+ * Breakpoint: min-width: 640px and max-width: 1023px
+ *
+ * Strategy: Mobile-first. This file bridges between single-column
+ * mobile and full multi-column desktop layouts.
+ *
+ * TODO:
+ *   - Switch grids from 1 column to 2 columns where appropriate
+ *   - Adjust navbar: collapse hamburger or show abbreviated links
+ *   - About section: consider stacking image above content
+ *   - Card grids: 2-column layout
+ *   - Form: 2-column row for name + email fields
+ *   - Footer: 2-column link grid
+ *
+ * Example wrapper:
+ *   @media (min-width: 640px) and (max-width: 1023px) { ... }
+ */
