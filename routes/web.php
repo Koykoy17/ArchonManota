@@ -42,6 +42,17 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 | Rate-limited to prevent abuse. Uncomment throttle once tested.
 |
 */
+use App\Http\Controllers\BrochureController;
+
 Route::post('/quote', [QuoteController::class, 'store'])
-    ->name('quote.store');
-    // ->middleware('throttle:10,1'); // TODO: Enable rate limiting in production
+    ->name('quote.store')
+    ->middleware('throttle:5,1');
+
+/*
+|--------------------------------------------------------------------------
+| Secure PDF Brochure Download
+|--------------------------------------------------------------------------
+*/
+Route::get('/download-brochure', [BrochureController::class, 'download'])
+    ->name('brochure.download')
+    ->middleware('throttle:10,1');

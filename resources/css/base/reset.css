@@ -1,13 +1,3 @@
-/*
- * resources/css/base/reset.css
- * ─────────────────────────────────────────────────────────────────
- * Modern CSS Reset
- * Based on Andy Bell's reset + Josh Comeau's additions.
- * Eliminates cross-browser inconsistencies before design tokens apply.
- * ─────────────────────────────────────────────────────────────────
- */
-
-/* ── Box sizing ─────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -16,7 +6,9 @@
 
 /* ── Root & document ────────────────────────────────────────────── */
 html {
-    font-size: 100%; /* 1rem = 16px baseline */
+    font-size: 100%;
+    /* 1rem = 16px baseline */
+    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -26,7 +18,12 @@ html {
 
 /* ── Remove default margin / padding ───────────────────────────── */
 body,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
@@ -74,7 +71,12 @@ video {
 }
 
 /* ── Typography ─────────────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     overflow-wrap: break-word;
 }
 
@@ -82,7 +84,8 @@ p,
 li,
 figcaption {
     overflow-wrap: break-word;
-    max-width: 65ch; /* Optimal line length for readability */
+    max-width: 65ch;
+    /* Optimal line length for readability */
 }
 
 /* Allow max-width override within layout containers */
@@ -155,6 +158,7 @@ table {
 
 /* ── Reduce motion ──────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {

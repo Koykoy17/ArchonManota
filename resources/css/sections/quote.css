@@ -1,30 +1,421 @@
 /*
  * resources/css/sections/quote.css
- * ──────────────────────────────────────────────────────────
- * Styles for the Quote request form section.
- *
- * View: resources/views/sections/quote.blade.php
- *
- * Key selectors (to be defined):
- *   #quote
- *   .quote__inner
- *   .quote__header
- *   .quote__title
- *   .quote__subtitle
- *   .quote__form
- *   .quote__form-row
- *   .quote__field
- *   .quote__label
- *   .quote__input
- *   .quote__textarea
- *   .quote__error
- *   .quote__submit
- *   .quote__success
- *
- * TODO:
- *   - Centered form layout with max-width constraint
- *   - Input / textarea focus states with brand colour ring
- *   - Error state styling (red border, error message)
- *   - Success state / flash notification styling
- *   - Background: subtle gradient or image overlay
+ * ─────────────────────────────────────────────────────────────────
+ * Request a Quote Section Styling (Floating Card Overlap)
+ * ─────────────────────────────────────────────────────────────────
  */
+
+.quote {
+    position: relative;
+    z-index: 10;
+    margin-top: -80px;
+    /* Negative top margin creates the floating overlap on About Us */
+    padding: 0 var(--container-padding);
+}
+
+.quote__container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.quote__card {
+    position: relative;
+    padding: 44px 40px 56px 40px;
+    /* 56px bottom padding keeps right panel safely inside white card boundary */
+    background: transparent;
+    overflow: hidden;
+}
+
+.quote__card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.quote__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ── Form Side (Left) ───────────────────────────────────────────── */
+.quote__form-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote__header {
+    margin-bottom: 24px;
+}
+
+.quote__badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FBAA19;
+    /* Amber/orange badge */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.quote__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #151616;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+}
+
+.quote__subtitle {
+    font-size: 13px;
+    color: #666666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form inputs styling */
+.quote__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.quote__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.quote__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote__label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888888;
+    margin-bottom: 4px;
+}
+
+.quote__input,
+.quote__select,
+.quote__textarea {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    color: #151616;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.quote__input:focus,
+.quote__select:focus,
+.quote__textarea:focus {
+    border-color: #9D0211;
+    box-shadow: 0 0 0 3px rgba(157, 2, 17, 0.1);
+}
+
+.quote__input.is-invalid,
+.quote__select.is-invalid,
+.quote__textarea.is-invalid {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+}
+
+/* Field Error Text */
+.quote__field-error {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #e53e3e;
+    margin-top: 4px;
+}
+
+/* Success Alert Banner */
+.quote__alert-success {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    background-color: rgba(20, 140, 80, 0.12);
+    border: 1px solid rgba(20, 140, 80, 0.35);
+    border-radius: 12px;
+    color: #10b981;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.quote__alert-icon {
+    flex-shrink: 0;
+    color: #10b981;
+}
+
+.quote__select-wrap {
+    position: relative;
+}
+
+.quote__select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.quote__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkbox */
+.quote__checkbox-field {
+    margin-top: 4px;
+}
+
+.quote__checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 12.5px;
+    color: #444444;
+}
+
+.quote__checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #9D0211;
+    cursor: pointer;
+}
+
+/* Submit button */
+.quote__submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 24px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #9D0211;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.quote__submit-btn:hover {
+    background-color: #C40317;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 3, 23, 0.45);
+}
+
+.quote__submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(157, 2, 17, 0.4);
+}
+
+/* ── Industry Solutions Side (Right) ───────────────────────────── */
+.quote__solutions-side {
+    position: relative;
+    border-radius: 20px;
+    padding: 28px 22px;
+    margin-top: 90px;
+    /* Aligns top of panel with form inputs, keeping it 100% inside white card */
+    margin-bottom: 20px;
+    /* Keeps bottom safely inside white card boundary */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #7d020e;
+}
+
+.quote__solutions-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.quote__solutions-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+    display: block;
+}
+
+.quote__solutions-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.quote__solutions-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 14px;
+}
+
+.quote__solutions-desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 12px;
+}
+
+.quote__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FBAA19;
+    /* Amber/orange font color matching reference design */
+}
+
+.quote__brochure-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 12px 24px;
+    margin-top: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: #151616;
+    background-color: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.quote__brochure-btn:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   OUR PARTNERS STRIP (Broken border container)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.partners {
+    margin-top: 100px;
+    position: relative;
+    z-index: 5;
+}
+
+.partners__container {
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 40px;
+    padding: 42px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #151616;
+}
+
+.partners__title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.partners__logos {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.partners__logo-item {
+    position: relative;
+    background-color: #151616;
+    padding: 0 16px;
+    margin-top: -150px;
+    /* Shifts larger logos upwards to break top border line */
+}
+
+.partners__logo-img {
+    height: 74px;
+    width: auto;
+    object-fit: contain;
+}
+
+.partners__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1px;
+}
+
+.partners__divider-img {
+    height: 1px;
+    width: 52px;
+    object-fit: contain;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+    .quote {
+        margin-top: -80px;
+    }
+
+    .quote__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote__solutions-side {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .quote__card {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .quote__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quote__title {
+        font-size: 24px;
+    }
+}

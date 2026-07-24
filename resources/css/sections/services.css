@@ -1,20 +1,279 @@
 /*
  * resources/css/sections/services.css
- * ──────────────────────────────────────────────────────────
- * Styles for the Services showcase section.
- *
- * View: resources/views/sections/services.blade.php
- *
- * Key selectors (to be defined):
- *   #services
- *   .services__inner
- *   .services__header
- *   .services__title
- *   .services__grid
- *
- * TODO:
- *   - Responsive CSS grid for service cards
- *   - Alternating background colour between sections for visual rhythm
- *   - Section header with icon accent
- *   - Card component styles live in components/cards.css
+ * ─────────────────────────────────────────────────────────────────
+ * Our Services Section Styling
+ * ─────────────────────────────────────────────────────────────────
  */
+
+.services {
+    position: relative;
+    background-color: #151616;
+    margin-top: 100px;
+    padding: 0 0 100px;
+    overflow: hidden;
+}
+
+/* Container matches navbar__inner left/right margin and padding exactly */
+.services__container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ── Top Content Block — ALL text on plain dark background ──────── */
+.services__top-block {
+    margin-bottom: 14px;
+}
+
+.services__badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #CB9F53;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.services__heading {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.services__heading-accent {
+    color: #CB9F53;
+    font-weight: 800;
+}
+
+.services__intro-desc {
+    font-size: 14.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
+    max-width: 600px;
+    margin: 0;
+}
+
+/* 2nd paragraph — inside bg-service.png card, above image+accordion */
+.services__card-desc {
+    font-size: 14.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
+    max-width: 560px;
+    margin: 0 0 28px;
+}
+
+/* ── Card Area — bg-service.png wraps ONLY image + accordion row ── */
+.services__card-area {
+    position: relative;
+    border-radius: 28px;
+    padding: 14px 48px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Break out wider than the 1200px container — centered with equal side gaps */
+    margin-left: calc(-2 * var(--container-padding));
+    margin-right: calc(-2 * var(--container-padding));
+}
+
+/* Decorative background shape (bg-service.png) — centered, filling card area */
+.services__bg-shape {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.98;
+}
+
+.services__card-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Two-Column Row (Image Left, Accordion Right) ───────────────── */
+.services__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    /* Both columns match height so accordion items distribute evenly */
+}
+
+/* Left Image — Fixed stable height */
+.services__image-col {
+    width: 100%;
+}
+
+.services__img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Accordion Column — must fill full row height */
+.services__accordion-col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.services__accordion-wrapper {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    height: 100%;
+}
+
+/* Accordion items distributed evenly across full image height */
+.services__accordion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services__accordion-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: none;
+}
+
+.services__accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.services__accordion-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.services__title-accent {
+    color: #CB9F53;
+    font-weight: 700;
+}
+
+.services__accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    color: #ffffff;
+    overflow: visible;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.services__arrow-icon {
+    width: 24px;
+    height: 24px;
+    overflow: visible;
+    display: block;
+}
+
+/* Expanded/Active state */
+.services__accordion-item.is-active .services__accordion-header {
+    padding-bottom: 8px;
+}
+
+.services__accordion-item.is-active .services__accordion-icon {
+    color: #ffffff;
+}
+
+.services__accordion-item:not(.is-active) .services__accordion-icon {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.services__accordion-body {
+    overflow: hidden;
+    padding-bottom: 14px;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.services__accordion-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.80);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Vertical Red/White Progress Indicator Bar ───────────────────── */
+.services__scroll-bar {
+    position: relative;
+    width: 5px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+.services__scroll-bar-red {
+    width: 100%;
+    height: 20%;
+    background-color: #9D0211;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s ease;
+}
+
+.services__scroll-bar-white {
+    width: 100%;
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 0 0 4px 4px;
+}
+
+.services__scroll-thumb {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border: 2px solid #9D0211;
+    border-radius: 50%;
+    transition: top 0.3s ease;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+    .services__row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .services__heading {
+        font-size: 28px;
+    }
+
+    .services__card-area {
+        padding: 24px;
+    }
+}

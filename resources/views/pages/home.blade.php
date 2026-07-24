@@ -13,12 +13,12 @@
 
     @include('sections.about')
 
+    @include('sections.quote')
+
     @include('sections.products')
 
     @include('sections.services')
 
     @include('sections.articles')
-
-    @include('sections.quote')
 
 @endsection

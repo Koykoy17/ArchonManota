@@ -90,8 +90,9 @@
     align-items: center;
     justify-content: center;
     padding: 13px 32px;
-    margin-left: -16rem;
+    margin-left: -17rem;
     font-size: 14px;
+
     font-weight: 600;
     color: #ffffff;
     text-decoration: none;
@@ -104,9 +105,14 @@
 }
 
 .navbar__cta:hover {
-    background-color: #7a0110;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(157, 2, 17, 0.4);
+    background-color: #C40317;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 3, 23, 0.45);
+}
+
+.navbar__cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(157, 2, 17, 0.4);
 }
 
 /* ── Mobile Responsive ─────────────────────────────────────────── */

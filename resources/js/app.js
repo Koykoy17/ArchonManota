@@ -17,6 +17,7 @@ import './bootstrap';
 
 import { initNavbar }       from './components/navbar';
 import { initSmoothScroll } from './components/smooth-scroll';
+import { initAccordion }    from './components/accordion';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -25,5 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Initialize smooth scroll for all in-page anchor links */
     initSmoothScroll();
+
+    /* Initialize services accordion */
+    initAccordion();
 
 });

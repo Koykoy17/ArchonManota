@@ -16,9 +16,9 @@
     <div class="navbar__inner">
 
         {{-- ── Logo — real Archon image (as shown in design sample) ── --}}
-        <a href="{{ route('home') }}"
+        <a href="#home"
            class="navbar__logo"
-           aria-label="Archon Special Machineries — Back to homepage">
+           aria-label="Archon Special Machineries — Back to top of Hero section">
             <img
                 src="{{ asset('images/logos/archon-logo.png') }}"
                 alt="Archon Special Machineries"

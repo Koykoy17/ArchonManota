@@ -8,166 +8,174 @@
 
 <footer id="footer" class="footer" role="contentinfo" aria-label="Site footer">
 
-    {{-- ── Main footer body ────────────────────────────────────── --}}
-    <div class="footer__body">
+    {{-- ── Floating Main Container ──────────────────────────────────── --}}
+    <div class="footer__floating-container">
         <div class="footer__grid">
 
-            {{-- ── Brand column ────────────────────────────────── --}}
-            <div class="footer__brand">
+            {{-- ── Column 1: Quick Contact ─────────────────────────── --}}
+            <div class="footer__contact-col">
+                <h3 class="footer__col-heading">Quick Contact</h3>
+                <p class="footer__contact-sub">If you have any questions or need assistance, don't hesitate to reach out to our team.</p>
 
-                <a href="{{ route('home') }}"
-                   class="footer__logo"
-                   aria-label="Archon — Back to homepage">
-                    <span class="footer__logo-mark" aria-hidden="true">A</span>
-                    <span class="footer__logo-text">Arch<span>on</span></span>
-                </a>
+                <hr class="footer__col-divider">
 
-                <p class="footer__tagline">
-                    <!-- Company tagline placeholder — Phase 3 -->
-                </p>
-
-                {{-- Social Links --}}
-                <ul class="footer__social" role="list" aria-label="Social media links">
-
-                    <li class="footer__social-item">
-                        <a href="#"
-                           class="footer__social-link"
-                           aria-label="Follow us on LinkedIn"
-                           rel="noopener noreferrer"
-                           target="_blank">
-                            {{-- LinkedIn icon --}}
-                            <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
+                {{-- Where we located --}}
+                <div class="footer__contact-block">
+                    <p class="footer__contact-label">Where we located:</p>
+                    <div class="footer__contact-row">
+                        <img src="{{ asset('images/icons/icon-location.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <a href="https://maps.google.com/?q=Door+14-18+Asiaprime+Center+G+Del+Pilar+St+Davao+City"
+                           class="footer__contact-link footer__contact-link--gold"
+                           target="_blank" rel="noopener noreferrer">
+                            Door 14-18 Asiaprime Center, G. Del Pilar St. Corner Dacudao Avenue, Brgy. Agdao Proper, Agdao District, Davao City
                         </a>
-                    </li>
+                    </div>
+                </div>
 
-                    <li class="footer__social-item">
-                        <a href="#"
-                           class="footer__social-link"
-                           aria-label="Follow us on Twitter / X"
-                           rel="noopener noreferrer"
-                           target="_blank">
-                            {{-- X / Twitter icon --}}
-                            <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.732-8.845L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
+                <hr class="footer__col-divider">
+
+                {{-- Send us email --}}
+                <div class="footer__contact-block">
+                    <p class="footer__contact-label">Send us email:</p>
+                    <div class="footer__contact-row">
+                        <img src="{{ asset('images/icons/icon-email.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <a href="mailto:archon.salesdivision@gmail.com"
+                           class="footer__contact-link footer__contact-link--gold">
+                            archon.salesdivision@gmail.com
                         </a>
-                    </li>
+                    </div>
+                </div>
 
-                    <li class="footer__social-item">
-                        <a href="#"
-                           class="footer__social-link"
-                           aria-label="Visit our Facebook page"
-                           rel="noopener noreferrer"
-                           target="_blank">
-                            {{-- Facebook icon --}}
-                            <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
+                <hr class="footer__col-divider">
+
+                {{-- Dial us today --}}
+                <div class="footer__contact-block">
+                    <p class="footer__contact-label">Dial us today:</p>
+                    <div class="footer__contact-row">
+                        <img src="{{ asset('images/icons/icon-call.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <a href="tel:+639171330643"
+                           class="footer__contact-link footer__contact-link--gold">
+                            (63) 917 133 0643
                         </a>
-                    </li>
+                    </div>
+                </div>
 
-                </ul>
-            </div>{{-- /.footer__brand --}}
+                <hr class="footer__col-divider">
 
-            {{-- ── Quick Links column ───────────────────────────── --}}
-            <div class="footer__links-group">
-                <h3 class="footer__links-heading">Quick Links</h3>
-                <ul class="footer__links-list" role="list">
-                    <li class="footer__links-item">
-                        <a href="#hero" class="footer__link">Home</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#about" class="footer__link">About Us</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#products" class="footer__link">Featured Products</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#services" class="footer__link">Services</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#articles" class="footer__link">Articles</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#quote" class="footer__link">Get in Touch</a>
-                    </li>
-                </ul>
-            </div>{{-- /.footer__links-group --}}
+                {{-- Social icons --}}
+                <div class="footer__social-block">
+                    <p class="footer__contact-label">Follow us on</p>
+                    <ul class="footer__social" role="list" aria-label="Social media links">
+                        <li class="footer__social-item">
+                            <a href="https://www.facebook.com/krian.manota.16/" class="footer__social-link" aria-label="Follow us on Facebook" rel="noopener noreferrer" target="_blank">
+                                <img src="{{ asset('images/icons/icon-facebook.png') }}" alt="Facebook" class="footer__social-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://www.linkedin.com/login" class="footer__social-link" aria-label="Follow us on LinkedIn" rel="noopener noreferrer" target="_blank">
+                                <img src="{{ asset('images/icons/icon-linkedin.png') }}" alt="LinkedIn" class="footer__social-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://www.tiktok.com/" class="footer__social-link" aria-label="Follow us on TikTok" rel="noopener noreferrer" target="_blank">
+                                <img src="{{ asset('images/icons/icon-tiktok.png') }}" alt="TikTok" class="footer__social-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://www.youtube.com/" class="footer__social-link" aria-label="Watch us on YouTube" rel="noopener noreferrer" target="_blank">
+                                <img src="{{ asset('images/icons/icon-youtube.png') }}" alt="YouTube" class="footer__social-img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>{{-- /.footer__contact-col --}}
 
-            {{-- ── Company column ───────────────────────────────── --}}
-            <div class="footer__links-group">
-                <h3 class="footer__links-heading">Company</h3>
-                <ul class="footer__links-list" role="list">
-                    <li class="footer__links-item">
-                        <a href="#" class="footer__link">Our Story</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#" class="footer__link">Careers</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#" class="footer__link">Press</a>
-                    </li>
-                    <li class="footer__links-item">
-                        <a href="#" class="footer__link">Partners</a>
-                    </li>
-                </ul>
-            </div>{{-- /.footer__links-group --}}
+            {{-- ── Column 2 + 3: Right area ───────────────────────── --}}
+            <div class="footer__right-area">
 
-            {{-- ── Newsletter column ────────────────────────────── --}}
-            <div class="footer__links-group">
-                <h3 class="footer__links-heading">Stay Updated</h3>
-                <p class="footer__newsletter-text">
-                    <!-- Newsletter description placeholder — Phase 3 -->
-                </p>
-                {{-- Newsletter form placeholder --}}
-                <form class="footer__newsletter-form"
-                      aria-label="Newsletter signup"
-                      action="#"
-                      method="POST">
-                    @csrf
-                    <label for="footer-email" class="sr-only">Email address</label>
-                    <input
-                        id="footer-email"
-                        class="footer__newsletter-input"
-                        type="email"
-                        name="email"
-                        placeholder="your@email.com"
-                        autocomplete="email"
-                        required
-                        aria-label="Enter your email address">
-                    <button
-                        type="submit"
-                        class="footer__newsletter-btn"
-                        aria-label="Subscribe to newsletter">
-                        Subscribe
-                    </button>
-                </form>
-            </div>{{-- /.footer__links-group --}}
+                {{-- Top row: Quick Links + Brand --}}
+                <div class="footer__right-top">
+
+                    {{-- Quick Links --}}
+                    <div class="footer__links-col">
+                        <h3 class="footer__col-heading">Quick Links</h3>
+                        <div class="footer__links-two-col">
+                            <ul class="footer__links-list" role="list">
+                                <li><a href="#about" class="footer__link">About us</a></li>
+                                <li><a href="#products" class="footer__link">Products</a></li>
+                                <li><a href="#" class="footer__link">Brand New</a></li>
+                                <li><a href="#" class="footer__link">Parts</a></li>
+                            </ul>
+                            <ul class="footer__links-list" role="list">
+                                <li><a href="#services" class="footer__link">Services</a></li>
+                                <li><a href="#articles" class="footer__link">News</a></li>
+                                <li><a href="#quote" class="footer__link">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>{{-- /.footer__links-col --}}
+
+                    {{-- Brand --}}
+                    <div class="footer__brand-col">
+                        <div class="footer__brand-logo">
+                            <img src="{{ asset('images/logos/archon-footer-logo.png') }}"
+                                 alt="Archon Special Machineries Inc. logo badge"
+                                 class="footer__brand-badge">
+                        </div>
+                        <h4 class="footer__brand-name">ARCHON SPECIAL MACHINERIES INC.</h4>
+                        <p class="footer__brand-desc">
+                            is the leading distributor of trucks &amp; heavy equipment nationwide. We are a certified partner and dealer of SINOTRUK, the largest and number one manufacturer of trucks and heavy equipment in China.
+                        </p>
+                    </div>{{-- /.footer__brand-col --}}
+
+                </div>{{-- /.footer__right-top --}}
+
+                {{-- Newsletter — below Quick Links + Brand --}}
+                <div class="footer__newsletter-container">
+                    <div class="footer__newsletter-wrap">
+                        <form class="footer__newsletter-form" aria-label="Newsletter signup" action="#" method="POST">
+                            @csrf
+                            <label for="footer-email" class="sr-only">Email address</label>
+                            <input
+                                id="footer-email"
+                                class="footer__newsletter-input"
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email to receive curated content, including industry alerts, news, and insights..."
+                                autocomplete="email"
+                                required
+                                aria-label="Enter your email address">
+                            <button
+                                type="submit"
+                                class="footer__newsletter-btn"
+                                aria-label="Subscribe to newsletter">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>{{-- /.footer__newsletter-container --}}
+
+            </div>{{-- /.footer__right-area --}}
 
         </div>{{-- /.footer__grid --}}
-    </div>{{-- /.footer__body --}}
 
-    {{-- ── Divider ──────────────────────────────────────────────── --}}
-    <hr class="footer__divider" aria-hidden="true">
+        {{-- ── Bottom bar (inside floating container) ─────────────── --}}
+        <div class="footer__bottom">
+            <div class="footer__bottom-inner">
+                <p class="footer__copyright">
+                    Copyright Archon Special Machineries Inc {{ date('Y') }}, Designed and Developed by R Web Solutions
+                </p>
+                <ul class="footer__legal-links" role="list" aria-label="Legal links">
+                    <li class="footer__legal-item">
+                        <a href="#" class="footer__legal-link">Terms and Conditions</a>
+                    </li>
+                    <li class="footer__legal-item footer__legal-separator" aria-hidden="true">|</li>
+                    <li class="footer__legal-item">
+                        <a href="#" class="footer__legal-link">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>{{-- /.footer__bottom --}}
 
-    {{-- ── Bottom bar ───────────────────────────────────────────── --}}
-    <div class="footer__bottom">
-        <p class="footer__copyright">
-            &copy; {{ date('Y') }} Archon. All rights reserved.
-        </p>
-        <ul class="footer__legal-links" role="list" aria-label="Legal links">
-            <li class="footer__legal-item">
-                <a href="#" class="footer__legal-link">Privacy Policy</a>
-            </li>
-            <li class="footer__legal-item">
-                <a href="#" class="footer__legal-link">Terms of Service</a>
-            </li>
-            <li class="footer__legal-item">
-                <a href="#" class="footer__legal-link">Cookie Policy</a>
-            </li>
-        </ul>
-    </div>{{-- /.footer__bottom --}}
+    </div>{{-- /.footer__floating-container --}}
 
 </footer>

@@ -1,27 +1,216 @@
 /*
  * resources/css/sections/about.css
- * ──────────────────────────────────────────────────────────
- * Styles for the About section.
- *
- * View: resources/views/sections/about.blade.php
- *
- * Key selectors (to be defined):
- *   #about
- *   .about__inner
- *   .about__image-col
- *   .about__image
- *   .about__content-col
- *   .about__title
- *   .about__description
- *   .about__stats
- *   .about__stat
- *   .about__stat-value
- *   .about__stat-label
- *
- * TODO:
- *   - Two-column CSS grid (image | content)
- *   - Image with rounded corners and subtle drop shadow
- *   - Stats displayed in a horizontal row with large numeric values
- *   - Scroll-reveal animation on first viewport entry
- *   - Alternating layout option (content | image) for reuse
+ * ─────────────────────────────────────────────────────────────────
+ * About Us Section Styling
+ * ─────────────────────────────────────────────────────────────────
  */
+
+.about {
+    position: relative;
+    background-color: #151616;
+    margin-top: 80px; /* Generous gap separating Hero section and About Us section */
+    padding: 0;
+}
+
+.about__container {
+    position: relative;
+    background-color: #272727;
+    border-radius: 24px;
+    padding: 64px 0 220px 0;
+    /* Generous bottom space for overlapping Quote card */
+    width: 100%;
+    overflow: hidden;
+}
+
+.about__bg-map {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 140px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+    /* Clearer world map graphic */
+}
+
+.about__map-img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transform: translateX(15px);
+
+}
+
+.about__inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.about__header {
+    margin-bottom: 48px;
+    max-width: 900px;
+}
+
+.about__badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FBAA19;
+    /* amber/orange badge */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+}
+
+.about__title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* ── Grid Layout ────────────────────────────────────────────────── */
+.about__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.about__cards-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+}
+
+.about__cards-bottom {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 36px;
+    align-items: start;
+}
+
+/* ── Feature Cards ──────────────────────────────────────────────── */
+.about__card {
+    border-radius: 20px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 205px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about__card--primary {
+    background-color: #9D0211;
+    /* Brand Red */
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(157, 2, 17, 0.3);
+}
+
+.about__card--dark {
+    background-color: rgba(48, 48, 48, 0.68);
+    /* Clean alpha transparency so map pattern shows through clearly without blur */
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    color: #ffffff;
+}
+
+.about__card:hover {
+    transform: translateY(-3px);
+}
+
+.about__card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.about__card-number {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.about__card--dark .about__card-number {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about__card-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.about__card-heading {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #ffffff;
+}
+
+.about__card-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* ── Story Text ─────────────────────────────────────────────────── */
+.about__story {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+    text-align: right;
+    height: 100%;
+}
+
+.about__story-text {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.82);
+    text-align: right;
+    margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+    .about__cards-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about__cards-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .about__story {
+        padding-left: 0;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about__container {
+        padding: 40px 24px 140px;
+    }
+
+    .about__cards-top {
+        grid-template-columns: 1fr;
+    }
+
+    .about__title {
+        font-size: 22px;
+    }
+}

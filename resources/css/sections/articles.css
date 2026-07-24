@@ -1,21 +1,203 @@
 /*
  * resources/css/sections/articles.css
- * ──────────────────────────────────────────────────────────
- * Styles for the Articles preview section.
- *
- * View: resources/views/sections/articles.blade.php
- *
- * Key selectors (to be defined):
- *   #articles
- *   .articles__inner
- *   .articles__header
- *   .articles__title
- *   .articles__grid
- *   .articles__cta
- *
- * TODO:
- *   - Three-column article card grid (collapses on mobile)
- *   - Section header with "Latest Articles" or similar label
- *   - "Read More" CTA below grid
- *   - Card component styles live in components/cards.css
+ * ─────────────────────────────────────────────────────────────────
+ * Articles & Media Section Styling
+ * Background Asset: public/images/backgrounds/bg-articles.png
+ * ─────────────────────────────────────────────────────────────────
  */
+
+.articles {
+    position: relative;
+    background-color: #151616;
+    padding: 100px 0 70px;
+    overflow: hidden;
+}
+
+/* Background image (bg-articles.png) — crisp, 100% sharp, zero blur or transparency */
+.articles__bg-shape {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.articles__container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ── Section Header (Centered) ──────────────────────────────────── */
+.articles__header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.articles__badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #CB9F53;
+    /* Brand Gold badge */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.articles__heading {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.articles__heading-accent {
+    color: #CB9F53;
+    /* Brand Gold accent "Archon" */
+    font-weight: 800;
+}
+
+/* ── 3-Column Articles Grid ──────────────────────────────────────── */
+.articles__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* ── Article Card ────────────────────────────────────────────────── */
+.articles__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articles__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Card Image Wrapper */
+.articles__card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.articles__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.articles__card:hover .articles__card-img {
+    transform: scale(1.04);
+}
+
+/* Card Body (White content area) */
+.articles__card-body {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 24px;
+    background-color: #ffffff;
+}
+
+.articles__card-date {
+    font-size: 11px;
+    font-weight: 500;
+    color: #888888;
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.02em;
+}
+
+.articles__card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #151616;
+    line-height: 1.35;
+    margin: 0 0 24px;
+    flex: 1;
+}
+
+/* Read Article Link */
+.articles__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-top: auto;
+}
+
+.articles__link-arrow {
+    width: 16px;
+    height: 16px;
+    color: #CB9F53;
+    /* Brand Gold arrow */
+    transition: transform 0.2s ease;
+}
+
+.articles__card-link:hover {
+    color: #151616;
+}
+
+.articles__card-link:hover .articles__link-arrow {
+    transform: translateX(4px);
+}
+
+/* Red Bottom Border Strip on each card */
+.articles__card-border-strip {
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    right: 24px;
+    height: 3px;
+    background-color: #9D0211;
+    /* Brand Red strip */
+    border-radius: 2px 2px 0 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+    .articles__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .articles__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .articles {
+        padding: 60px 0 80px;
+    }
+
+    .articles__heading {
+        font-size: 28px;
+    }
+}
