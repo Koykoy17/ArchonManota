@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
@@ -21,10 +22,32 @@ class NewsletterController extends Controller
             'email' => ['required', 'email', 'max:255'],
         ]);
 
+        $email = strtolower(trim($validated['email']));
+        $cacheKey = 'newsletter_subscriber_' . md5($email);
+
+        // Prevent duplicate subscription using Laravel Cache
+        if (Cache::has($cacheKey)) {
+            $duplicateMsg = 'You are already subscribed to our newsletter with this email address.';
+
+            if ($request->wantsJson() || $request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $duplicateMsg,
+                    'errors' => ['email' => [$duplicateMsg]],
+                ], 422);
+            }
+
+            return redirect()->to(url()->previous() . '#footer')
+                ->withErrors(['email' => $duplicateMsg]);
+        }
+
+        // Cache the subscriber email for 30 days
+        Cache::put($cacheKey, true, now()->addDays(30));
+
         // Log the newsletter subscription for administrative record
         Log::info('New Newsletter Subscription', [
-            'email'     => $validated['email'],
-            'ip'        => $request->ip(),
+            'email' => $email,
+            'ip' => $request->ip(),
             'timestamp' => now()->toDateTimeString(),
         ]);
 
