@@ -142,7 +142,7 @@ Controller: App\Http\Controllers\QuoteController@store
                     </form>
                 </div>
 
-                {{-- Right Side: Download Product Brochure Card --}}
+                {{-- Right Side: Industry Solutions Card --}}
                 <div class="quote__solutions-side">
                     <div class="quote__solutions-bg">
                         <img src="{{ asset('images/backgrounds/bg-download-brochure.png') }}" alt=""
@@ -150,28 +150,34 @@ Controller: App\Http\Controllers\QuoteController@store
                     </div>
 
                     <div class="quote__solutions-content">
-                        <h3 class="quote__solutions-title">Download Product Brochure</h3>
+                        <h3 class="quote__solutions-title">
+                            Industry<br>Solutions!
+                        </h3>
+
                         <p class="quote__solutions-desc">
-                            Get detailed technical specifications, dimensions, engine performance, and capacity data for
-                            all SINOTRUK models.
+                            Our portfolio consists of multiple clients in various industries. This alone is a testament to the reliability of our products and services. Check out our comprehensive brochure by clicking the button below.
+                        </p>
+
+                        <p class="quote__solutions-desc quote__solutions-desc--sub">
+                            Don’t find what you need? Then, you may request a special truck! We’ll source it for you.
                         </p>
 
                         <div class="quote__categories">
-                            <span>• DUMP TRUCK</span>
-                            <span>• PRIME MOVER</span>
-                            <span>• CARGO TRUCK</span>
-                            <span>• TRACTOR HEAD</span>
+                            <span>• Construction</span>
+                            <span>• Mining</span>
+                            <span>• Trucking</span>
+                            <span>• Hauling</span>
+                            <span>• Retail</span>
                         </div>
 
                         <a href="{{ route('brochure.download') }}" class="quote__brochure-btn"
-                            aria-label="Download PDF Product Brochure">
+                            aria-label="Download Brochure">
+                            <span>Download Brochure</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
-                            <span>Download PDF Brochure</span>
                         </a>
                     </div>
                 </div>

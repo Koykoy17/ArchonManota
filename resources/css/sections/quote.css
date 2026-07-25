@@ -242,17 +242,16 @@
 .quote__solutions-side {
     position: relative;
     border-radius: 20px;
-    padding: 28px 22px;
+    padding: 24px 22px;
     margin-top: 90px;
-    /* Aligns top of panel with form inputs, keeping it 100% inside white card */
     margin-bottom: 20px;
-    /* Keeps bottom safely inside white card boundary */
     color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    background-color: #7d020e;
+    background: linear-gradient(180deg, rgba(160, 85, 25, 0.45) 0%, rgba(110, 10, 15, 0.70) 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .quote__solutions-bg {
@@ -267,8 +266,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.65;
+    opacity: 0.85;
+    mix-blend-mode: normal;
     display: block;
+    filter: brightness(0.9) contrast(1.05);
 }
 
 .quote__solutions-content {
@@ -282,27 +283,32 @@
 .quote__solutions-title {
     font-size: 26px;
     font-weight: 800;
+    line-height: 1.15;
     color: #ffffff;
-    margin: 0 0 14px;
+    margin: 0 0 10px;
+    letter-spacing: -0.3px;
 }
 
 .quote__solutions-desc {
-    font-size: 12.5px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.92);
-    margin: 0 0 12px;
+    margin: 0 0 8px;
+}
+
+.quote__solutions-desc--sub {
+    margin-bottom: 10px;
 }
 
 .quote__categories {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
-    margin-top: 12px;
-    margin-bottom: 24px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #FBAA19;
-    /* Amber/orange font color matching reference design */
+    gap: 4px 12px;
+    margin-top: 2px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #EFA632;
 }
 
 .quote__brochure-btn {
@@ -310,12 +316,16 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    align-self: flex-start;
-    padding: 12px 24px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 280px;
+    padding: 11px 20px;
     margin-top: auto;
     font-size: 13px;
     font-weight: 700;
-    color: #151616;
+    color: #111111;
     background-color: #ffffff;
     border-radius: 50px;
     text-decoration: none;
