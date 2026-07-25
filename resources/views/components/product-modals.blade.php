@@ -16,7 +16,7 @@
             {{-- Left Column: Truck Image Showcase --}}
             <div class="product-modal__image-col">
                 <div class="product-modal__img-wrap">
-                    <img id="quickview-img" src="" alt="" class="product-modal__img">
+                    <img id="quickview-img" src="" alt="" class="product-modal__img" loading="lazy" decoding="async">
                 </div>
                 <div class="product-modal__badge-wrap">
                     <span class="product-modal__badge">SINOTRUK Genuine Unit</span>
@@ -115,7 +115,7 @@
                             </select>
                         </div>
 
-                        <img id="compare-img-a" src="" alt="" class="product-modal__compare-img">
+                        <img id="compare-img-a" src="" alt="" class="product-modal__compare-img" loading="lazy" decoding="async">
                         <h4 id="compare-name-a" class="product-modal__compare-name">Howo v7-x Dump Truck</h4>
                         <span id="compare-cat-a" class="product-modal__compare-cat">Dump Truck / 6x4</span>
                     </div>
@@ -176,7 +176,7 @@
                             </select>
                         </div>
 
-                        <img id="compare-img-b" src="" alt="" class="product-modal__compare-img">
+                        <img id="compare-img-b" src="" alt="" class="product-modal__compare-img" loading="lazy" decoding="async">
                         <h4 id="compare-name-b" class="product-modal__compare-name">Howo A7 | T7 Prime Mover</h4>
                         <span id="compare-cat-b" class="product-modal__compare-cat">Prime Mover / 6x4</span>
                     </div>

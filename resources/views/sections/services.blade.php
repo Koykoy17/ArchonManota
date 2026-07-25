@@ -29,7 +29,9 @@
             <img src="{{ asset('images/shapes/shape-service-bg.png') }}"
                  alt=""
                  class="services__bg-shape"
-                 aria-hidden="true">
+                 aria-hidden="true"
+                 loading="lazy"
+                 decoding="async">
 
             <div class="services__card-content">
                 {{-- 2nd paragraph inside bg-service.png, above image+accordion --}}
@@ -45,7 +47,8 @@
                         <img src="{{ asset('images/services/services-maintenance.png') }}"
                              alt="Technicians working on truck engine maintenance"
                              class="services__img"
-                             loading="lazy">
+                             loading="lazy"
+                             decoding="async">
                     </div>
 
                     {{-- RIGHT — Accordion List with Vertical Red Indicator Bar --}}

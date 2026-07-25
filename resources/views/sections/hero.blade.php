@@ -15,6 +15,7 @@
             src="{{ asset('images/hero/hero-background.png') }}"
             alt=""
             class="hero__bg-img"
+            loading="eager"
             fetchpriority="high"
             decoding="async">
     </div>
@@ -103,6 +104,7 @@
             src="{{ asset('images/hero/hero-truck.png') }}"
             alt="HOWO Heavy Duty Truck"
             class="hero__truck-img"
+            loading="eager"
             fetchpriority="high"
             decoding="async">
     </div>

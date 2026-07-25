@@ -13,7 +13,8 @@
             <img src="{{ asset('images/backgrounds/bg-world-map.png') }}"
                  alt=""
                  class="about__map-img"
-                 loading="lazy">
+                 loading="lazy"
+                 decoding="async">
         </div>
 
         <div class="about__inner">
@@ -35,7 +36,9 @@
                             <span class="about__card-number">01</span>
                             <img src="{{ asset('images/icons/icon-free-delivery.png') }}"
                                  alt="Free Delivery icon"
-                                 class="about__card-icon">
+                                 class="about__card-icon"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         <h3 class="about__card-heading">Free Delivery</h3>
                         <p class="about__card-desc">
@@ -49,7 +52,9 @@
                             <span class="about__card-number">02</span>
                             <img src="{{ asset('images/icons/icon-onsite-repair.png') }}"
                                  alt="On-site Repair icon"
-                                 class="about__card-icon">
+                                 class="about__card-icon"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         <h3 class="about__card-heading">On-site Repair</h3>
                         <p class="about__card-desc">
@@ -63,7 +68,9 @@
                             <span class="about__card-number">03</span>
                             <img src="{{ asset('images/icons/icon-one-year-warranty.png') }}"
                                  alt="One Year Warranty icon"
-                                 class="about__card-icon">
+                                 class="about__card-icon"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         <h3 class="about__card-heading">One Year Warranty</h3>
                         <p class="about__card-desc">
@@ -80,7 +87,9 @@
                             <span class="about__card-number">04</span>
                             <img src="{{ asset('images/icons/icon-24-hours.png') }}"
                                  alt="24-Hour Service icon"
-                                 class="about__card-icon">
+                                 class="about__card-icon"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         <h3 class="about__card-heading">24-Hour Service</h3>
                         <p class="about__card-desc">

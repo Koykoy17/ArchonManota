@@ -11,7 +11,9 @@
     <img src="{{ asset('images/backgrounds/bg-articles.png') }}"
          alt=""
          class="articles__bg-shape"
-         aria-hidden="true">
+         aria-hidden="true"
+         loading="lazy"
+         decoding="async">
 
     <div class="articles__container">
 
@@ -32,7 +34,8 @@
                     <img src="{{ asset('images/articles/article-1.png') }}"
                          alt="Archon gives back to Mother Nature tree planting event"
                          class="articles__card-img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="articles__card-body">
@@ -60,7 +63,8 @@
                     <img src="{{ asset('images/articles/article-2.png') }}"
                          alt="Archon, Sinotruk Strengthen partnership handshake"
                          class="articles__card-img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="articles__card-body">
@@ -88,7 +92,8 @@
                     <img src="{{ asset('images/articles/article-3.png') }}"
                          alt="Philcon Event 2025 conference"
                          class="articles__card-img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="articles__card-body">

@@ -23,7 +23,7 @@
                 <div class="footer__contact-block">
                     <p class="footer__contact-label">Where we located:</p>
                     <div class="footer__contact-row">
-                        <img src="{{ asset('images/icons/icon-location.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <img src="{{ asset('images/icons/icon-location.png') }}" alt="" class="footer__contact-icon" aria-hidden="true" loading="lazy" decoding="async">
                         <a href="https://maps.google.com/?q=Door+14-18+Asiaprime+Center+G+Del+Pilar+St+Davao+City"
                            class="footer__contact-link footer__contact-link--gold"
                            target="_blank" rel="noopener noreferrer">
@@ -38,7 +38,7 @@
                 <div class="footer__contact-block">
                     <p class="footer__contact-label">Send us email:</p>
                     <div class="footer__contact-row">
-                        <img src="{{ asset('images/icons/icon-email.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <img src="{{ asset('images/icons/icon-email.png') }}" alt="" class="footer__contact-icon" aria-hidden="true" loading="lazy" decoding="async">
                         <a href="mailto:archon.salesdivision@gmail.com"
                            class="footer__contact-link footer__contact-link--gold">
                             archon.salesdivision@gmail.com
@@ -52,7 +52,7 @@
                 <div class="footer__contact-block">
                     <p class="footer__contact-label">Dial us today:</p>
                     <div class="footer__contact-row">
-                        <img src="{{ asset('images/icons/icon-call.png') }}" alt="" class="footer__contact-icon" aria-hidden="true">
+                        <img src="{{ asset('images/icons/icon-call.png') }}" alt="" class="footer__contact-icon" aria-hidden="true" loading="lazy" decoding="async">
                         <a href="tel:+639171330643"
                            class="footer__contact-link footer__contact-link--gold">
                             (63) 917 133 0643
@@ -68,22 +68,22 @@
                     <ul class="footer__social" role="list" aria-label="Social media links">
                         <li class="footer__social-item">
                             <a href="https://www.facebook.com/krian.manota.16/" class="footer__social-link" aria-label="Follow us on Facebook" rel="noopener noreferrer" target="_blank">
-                                <img src="{{ asset('images/icons/icon-facebook.png') }}" alt="Facebook" class="footer__social-img">
+                                <img src="{{ asset('images/icons/icon-facebook.png') }}" alt="Facebook" class="footer__social-img" loading="lazy" decoding="async">
                             </a>
                         </li>
                         <li class="footer__social-item">
                             <a href="https://www.linkedin.com/login" class="footer__social-link" aria-label="Follow us on LinkedIn" rel="noopener noreferrer" target="_blank">
-                                <img src="{{ asset('images/icons/icon-linkedin.png') }}" alt="LinkedIn" class="footer__social-img">
+                                <img src="{{ asset('images/icons/icon-linkedin.png') }}" alt="LinkedIn" class="footer__social-img" loading="lazy" decoding="async">
                             </a>
                         </li>
                         <li class="footer__social-item">
                             <a href="https://www.tiktok.com/" class="footer__social-link" aria-label="Follow us on TikTok" rel="noopener noreferrer" target="_blank">
-                                <img src="{{ asset('images/icons/icon-tiktok.png') }}" alt="TikTok" class="footer__social-img">
+                                <img src="{{ asset('images/icons/icon-tiktok.png') }}" alt="TikTok" class="footer__social-img" loading="lazy" decoding="async">
                             </a>
                         </li>
                         <li class="footer__social-item">
                             <a href="https://www.youtube.com/" class="footer__social-link" aria-label="Watch us on YouTube" rel="noopener noreferrer" target="_blank">
-                                <img src="{{ asset('images/icons/icon-youtube.png') }}" alt="YouTube" class="footer__social-img">
+                                <img src="{{ asset('images/icons/icon-youtube.png') }}" alt="YouTube" class="footer__social-img" loading="lazy" decoding="async">
                             </a>
                         </li>
                     </ul>
@@ -119,7 +119,9 @@
                         <div class="footer__brand-logo">
                             <img src="{{ asset('images/logos/archon-footer-logo.png') }}"
                                  alt="Archon Special Machineries Inc. logo badge"
-                                 class="footer__brand-badge">
+                                 class="footer__brand-badge"
+                                 loading="lazy"
+                                 decoding="async">
                         </div>
                         <h4 class="footer__brand-name">ARCHON SPECIAL MACHINERIES INC.</h4>
                         <p class="footer__brand-desc">

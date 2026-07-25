@@ -11,7 +11,7 @@ Controller: App\Http\Controllers\QuoteController@store
     <div class="quote__container">
         {{-- Card using shape-quote-bg.png directly as background --}}
         <div class="quote__card">
-            <img src="{{ asset('images/shapes/shape-quote-bg.png') }}" alt="" class="quote__card-bg" aria-hidden="true">
+            <img src="{{ asset('images/shapes/shape-quote-bg.png') }}" alt="" class="quote__card-bg" aria-hidden="true" loading="lazy" decoding="async">
 
             <div class="quote__grid">
                 {{-- Left Side: Form --}}
@@ -146,7 +146,7 @@ Controller: App\Http\Controllers\QuoteController@store
                 <div class="quote__solutions-side">
                     <div class="quote__solutions-bg">
                         <img src="{{ asset('images/backgrounds/bg-download-brochure.png') }}" alt=""
-                            class="quote__solutions-img">
+                            class="quote__solutions-img" loading="lazy" decoding="async">
                     </div>
 
                     <div class="quote__solutions-content">
@@ -192,11 +192,11 @@ Controller: App\Http\Controllers\QuoteController@store
                 <div class="partners__logos">
                     <div class="partners__logo-item">
                         <img src="{{ asset('images/partners/partner-howo-sinotruk.png') }}" alt="HOWO Sinotruk"
-                            class="partners__logo-img">
+                            class="partners__logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="partners__logo-item">
                         <img src="{{ asset('images/partners/partner-gateway.png') }}" alt="Gateway"
-                            class="partners__logo-img">
+                            class="partners__logo-img" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>

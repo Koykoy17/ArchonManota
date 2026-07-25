@@ -25,13 +25,16 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     {{-- Truck Image (in front of bg shape) --}}
                     <img src="{{ asset('images/products/product-truck-1.png') }}"
                          alt="Howo v7-x Dump Truck"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 {{-- Interactive Bottom Row (Swatches default, Quick View/Compare on hover) --}}
@@ -62,12 +65,15 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     <img src="{{ asset('images/products/product-truck-2.png') }}"
                          alt="Howo v7 Dump Truck"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="product-card__bottom-row">
@@ -96,12 +102,15 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     <img src="{{ asset('images/products/product-truck-3.png') }}"
                          alt="Howo TX Dump Truck"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="product-card__bottom-row">
@@ -130,12 +139,15 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     <img src="{{ asset('images/products/product-truck-4.png') }}"
                          alt="Howo A7 | T7 Prime Mover"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="product-card__bottom-row">
@@ -164,12 +176,15 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     <img src="{{ asset('images/products/product-truck-5.png') }}"
                          alt="Howo 7 Prime Truck"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="product-card__bottom-row">
@@ -198,12 +213,15 @@
                     <img src="{{ asset('images/shapes/shape-truck-overlay.png') }}"
                          alt=""
                          class="product-card__bg-shape"
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         loading="lazy"
+                         decoding="async">
 
                     <img src="{{ asset('images/products/product-truck-6.png') }}"
                          alt="Howo A7 | T7 Dump Truck"
                          class="product-card__img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
 
                 <div class="product-card__bottom-row">
