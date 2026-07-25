@@ -23,8 +23,10 @@
         --container-padding: 1.25rem;
     }
 
-    body {
+    html, body {
         overflow-x: hidden;
+        touch-action: manipulation;
+        -webkit-text-size-adjust: 100%;
     }
 
     /* Prevent any main container from touching mobile screen edges */
