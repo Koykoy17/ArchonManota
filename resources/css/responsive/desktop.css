@@ -1,20 +1,180 @@
 /*
  * resources/css/responsive/desktop.css
  * ──────────────────────────────────────────────────────────
- * Desktop-specific overrides and enhancements.
- * Breakpoint: min-width: 1024px (or custom --breakpoint-lg)
- *
- * Strategy: Mobile-first. This file contains styles that ENHANCE
- * the layout at large viewport widths.
- *
- * TODO:
- *   - Expand multi-column grids to maximum column counts
- *   - Increase container max-width to var(--container-max-width)
- *   - Enable hover-only effects (not needed on touch devices)
- *   - Show desktop-only navigation elements (full link list)
- *   - Adjust hero section to side-by-side layout if applicable
- *   - Enable parallax or advanced animation effects
- *
- * Example wrapper:
- *   @media (min-width: 1024px) { ... }
+ * Desktop & Laptop Responsive Enhancements
+ * Optimized for 13", 14", 15", 16" Laptops (MacBook Air/Pro, Dell, HP, Lenovo)
+ * and Large PC Monitors (1920px+).
+ * ──────────────────────────────────────────────────────────
  */
+
+/* ── Standard Laptops & MacBooks (1200px - 1439px) ───────────────── */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    :root {
+        --container-max-width: 1180px;
+        --container-padding: 1.5rem;
+    }
+
+    /* Navbar */
+    .navbar__nav {
+        gap: 2.25rem;
+    }
+
+    .navbar__cta {
+        margin-left: 1.5rem;
+        padding: 11px 24px;
+    }
+
+    /* Hero Section */
+    .hero__headline {
+        font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+    }
+
+    .hero__arrow--next {
+        margin-left: 160px;
+    }
+
+    .hero__arrow--prev {
+        margin-left: 110px;
+    }
+
+    .hero__truck-card {
+        width: 52%;
+        max-width: 760px;
+    }
+
+    /* About Section */
+    .about__cards-top {
+        gap: 24px;
+    }
+
+    .about__cards-bottom {
+        gap: 24px;
+    }
+
+    /* Request Quote Section */
+    .quote__grid {
+        grid-template-columns: 1fr 290px;
+        gap: 20px;
+    }
+
+    .quote__card {
+        padding: 36px 32px 48px;
+    }
+
+    .partners__container {
+        padding: 34px 40px;
+    }
+
+    .partners__title {
+        font-size: 28px;
+    }
+
+    .partners__logos {
+        gap: 28px;
+    }
+
+    .partners__logo-img {
+        height: 56px;
+    }
+
+    .partners__logo-item {
+        margin-top: -74px;
+    }
+
+    /* Products Section */
+    .products__grid {
+        gap: 36px 24px;
+    }
+
+    /* Services Section */
+    .services__img {
+        height: 380px;
+    }
+
+    /* Articles Section */
+    .articles__grid {
+        gap: 24px;
+    }
+
+    /* Footer */
+    .footer__grid {
+        gap: 36px;
+    }
+}
+
+/* ── 15-inch Laptops & Mid-size Monitors (1440px - 1679px) ──────── */
+@media (min-width: 1440px) and (max-width: 1679px) {
+    :root {
+        --container-max-width: 1320px;
+        --container-padding: 2rem;
+    }
+
+    .navbar__nav {
+        gap: 3rem;
+    }
+
+    .navbar__cta {
+        margin-left: 2rem;
+    }
+
+    .hero__headline {
+        font-size: 64px;
+    }
+
+    .hero__truck-card {
+        width: 56%;
+        max-width: 840px;
+    }
+
+    .quote__grid {
+        grid-template-columns: 1fr 310px;
+        gap: 28px;
+    }
+
+    .partners__container {
+        padding: 38px 48px;
+    }
+
+    .partners__title {
+        font-size: 32px;
+    }
+
+    .partners__logo-img {
+        height: 60px;
+    }
+}
+
+/* ── Large 15"+ / 17"+ Monitors & 4K Displays (1680px+) ──────────── */
+@media (min-width: 1680px) {
+    :root {
+        --container-max-width: 1440px;
+        --container-padding: 2.5rem;
+    }
+
+    .hero__headline {
+        font-size: 72px;
+    }
+
+    .hero__truck-card {
+        width: 58%;
+        max-width: 920px;
+    }
+
+    .quote__grid {
+        grid-template-columns: 1fr 340px;
+        gap: 32px;
+    }
+
+    .products__grid {
+        gap: 48px 36px;
+    }
+
+    .services__img {
+        height: 440px;
+    }
+
+    .articles__grid {
+        gap: 36px;
+    }
+}
+

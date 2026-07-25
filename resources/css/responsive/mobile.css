@@ -1,22 +1,582 @@
 /*
  * resources/css/responsive/mobile.css
  * ──────────────────────────────────────────────────────────
- * Mobile-specific overrides (below tablet breakpoint).
- * Breakpoint: max-width: 639px
- *
- * Strategy: Mobile-first means base styles ARE the mobile styles.
- * Use this file only for tweaks that cannot be expressed in the
- * base styles without overriding tablet/desktop later.
- *
- * TODO:
- *   - Ensure all grids are single-column
- *   - Navbar: hamburger menu visible, links hidden by default
- *   - Hero: reduce font sizes, stack CTA buttons vertically
- *   - About: full-width image above text content
- *   - Footer: single column, stacked link groups
- *   - Reduce section vertical padding for smaller screens
- *   - Touch targets: min 44×44px for all interactive elements
- *
- * Example wrapper:
- *   @media (max-width: 639px) { ... }
+ * Mobile Smartphone Responsiveness & Typography Refinement (widths <= 639px)
+ * Optimized for iPhones (SE, 12, 13, 14, 15, Pro, Max) & Android devices.
+ * ──────────────────────────────────────────────────────────
  */
+
+@media (max-width: 639px) {
+
+    /* ── Prevent iOS Safari auto-zoom on input focus ────────────────── */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+
+    /* ── Mobile Layout Padding (Solid 20px padding away from edges) ── */
+    :root {
+        --container-padding: 1.25rem;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Prevent any main container from touching mobile screen edges */
+    .hero__inner,
+    .about__inner,
+    .quote__container,
+    .products__container,
+    .services__container,
+    .articles__container,
+    .footer__floating-container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ── Typography Refinements for Mobile ─────────────────────────── */
+    h1,
+    .hero__headline {
+        font-size: clamp(1.35rem, 5.5vw, 1.75rem) !important;
+        line-height: 1.2 !important;
+    }
+
+    h2,
+    .about__title,
+    .quote__title,
+    .products__title,
+    .services__heading,
+    .articles__heading {
+        font-size: clamp(1.15rem, 4.8vw, 1.45rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    p,
+    .hero__description,
+    .hero__top-bar-text,
+    .about__card-desc,
+    .about__story-text,
+    .quote__subtitle,
+    .quote__solutions-desc,
+    .services__intro-desc,
+    .services__card-desc,
+    .services__accordion-text,
+    .footer__brand-desc {
+        font-size: 12.5px !important;
+        line-height: 1.55 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important;
+        -webkit-hyphens: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Dropdown 1: 1st row Preventive, 2nd row Maintenance Services */
+    .services__accordion-item:nth-child(1) .services__title-accent {
+        display: block !important;
+        margin-bottom: 2px !important;
+        color: #CB9F53 !important;
+    }
+
+    /* Dropdowns 2-5: Title accent inline (Truck Rehab, On-Site Rescue, Repair or Replace, Overhauling) */
+    .services__accordion-item:nth-child(n+2) .services__title-accent {
+        display: inline !important;
+        margin-right: 4px !important;
+        color: #CB9F53 !important;
+    }
+
+    .services__accordion-title {
+        font-size: 15px !important;
+        display: block !important;
+        line-height: 1.35 !important;
+    }
+
+    /* ── Services Section Mobile ────────────────────────────────────── */
+    .services {
+        margin-top: 36px;
+        padding: 0 0 36px;
+    }
+
+    .services__container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .services__badge {
+        font-size: 12px;
+    }
+
+    .services__heading {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .services__intro-desc {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .services__card-area {
+        padding: 24px 20px !important;
+        border-radius: 18px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .services__accordion-item {
+        padding: 0 4px !important;
+    }
+
+    .services__accordion-header {
+        padding: 14px 0 !important;
+    }
+
+    .services__card-desc {
+        text-align: right !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+
+    .services__image-col {
+        display: flex !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+        margin-bottom: 12px !important;
+    }
+
+    .services__img {
+        width: 130px !important;
+        height: 85px !important;
+        max-width: 130px !important;
+        border-radius: 14px !important;
+        object-fit: cover !important;
+        border: 2px solid #CB9F53 !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        display: block !important;
+    }
+
+
+
+    /* ── Navbar Mobile Adjustments ─────────────────────────────────── */
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar__logo-img {
+        height: 36px;
+    }
+
+    .navbar__mobile-menu {
+        top: 70px;
+    }
+
+    /* ── Hero Section Mobile ────────────────────────────────────────── */
+    .hero {
+        min-height: auto;
+        padding-top: 10px;
+    }
+
+    .hero__inner {
+        padding-top: calc(70px + 0.75rem);
+        padding-bottom: 1.25rem;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .hero__content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .hero__headline {
+        font-size: clamp(1.6rem, 6.5vw, 2.1rem);
+        line-height: 1.18;
+    }
+
+    .hero__line {
+        white-space: normal;
+    }
+
+    .hero__arrows {
+        flex-direction: row;
+        gap: 14px;
+        margin-left: 0;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero__arrow--next,
+    .hero__arrow--prev {
+        margin-left: 0;
+    }
+
+    .hero__description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 13.5px;
+        line-height: 1.6;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important;
+        -webkit-hyphens: auto !important;
+    }
+
+    .hero__top-bar-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .hero__aside {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+
+    .hero__quote-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 13.5px;
+    }
+
+    .hero__truck-card {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        right: auto;
+        bottom: auto;
+        margin-top: 1.25rem;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+
+    .hero__truck-img {
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+
+    /* ── About Us Section Mobile ────────────────────────────────────── */
+    .about {
+        margin-top: 36px;
+    }
+
+    .about__container {
+        padding: 28px 16px 90px;
+        border-radius: 16px;
+    }
+
+    .about__badge {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .about__title {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .about__cards-top,
+    .about__cards-bottom {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .about__card {
+        padding: 20px 16px;
+        min-height: auto;
+        border-radius: 14px;
+    }
+
+    .about__card-number {
+        font-size: 24px;
+    }
+
+    .about__card-heading {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .about__card-desc {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .about__story {
+        padding-left: 0;
+    }
+
+    .about__story-text {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* ── Request Quote & Partners Section Mobile ────────────────────── */
+    .quote {
+        margin-top: -55px;
+        padding: 0 12px;
+    }
+
+    .quote__card {
+        padding: 22px 14px 28px;
+        border-radius: 16px;
+    }
+
+    .quote__badge {
+        font-size: 12px;
+    }
+
+    .quote__title {
+        font-size: 22px;
+    }
+
+    .quote__subtitle {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+
+    .quote__label {
+        font-size: 11px;
+    }
+
+    .quote__form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .quote__submit-btn {
+        padding: 13px 18px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+
+    .quote__solutions-side {
+        margin-top: 20px;
+        padding: 18px 14px;
+        border-radius: 14px;
+        min-height: auto;
+    }
+
+    .quote__solutions-title {
+        font-size: 20px;
+    }
+
+    .quote__solutions-desc {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .quote__categories {
+        font-size: 11.5px;
+        gap: 6px 12px;
+    }
+
+    .quote__brochure-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 14px;
+        font-size: 12.5px;
+    }
+
+    /* Our Partners Mobile Strip */
+    .partners {
+        margin-top: 32px;
+    }
+
+    .partners__container {
+        padding: 18px 12px;
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+        border-radius: 18px;
+    }
+
+    .partners__title {
+        font-size: 18px;
+    }
+
+    .partners__logos {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .partners__logo-item {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 6px 14px;
+        width: 100%;
+        max-width: 240px;
+        justify-content: center;
+    }
+
+    .partners__logo-img {
+        height: 40px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* ── Products Section Mobile ────────────────────────────────────── */
+    .products {
+        padding: 38px 14px 35px;
+    }
+
+    .products__badge {
+        font-size: 12px;
+    }
+
+    .products__title {
+        font-size: 22px;
+    }
+
+    .products__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .product-card__image-wrap {
+        height: 190px;
+    }
+
+    .product-card__name {
+        font-size: 14.5px;
+        min-height: auto;
+    }
+
+    .product-card__actions {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        margin-top: 8px;
+    }
+
+    .product-card__btn {
+        padding: 9px 18px;
+        font-size: 12px;
+    }
+
+    .product-card__swatches {
+        display: none;
+    }
+
+    /* ── Articles Section Mobile ────────────────────────────────────── */
+    .articles {
+        padding: 20px 0 40px;
+    }
+
+    .articles__badge {
+        font-size: 12px;
+    }
+
+    .articles__heading {
+        font-size: 22px;
+    }
+
+    .articles__grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .articles__card-img-wrapper {
+        height: 170px;
+    }
+
+    .articles__card-body {
+        padding: 14px;
+    }
+
+    .articles__card-date {
+        font-size: 10.5px;
+    }
+
+    .articles__card-title {
+        font-size: 14.5px;
+        line-height: 1.35;
+        margin-bottom: 14px;
+    }
+
+    .articles__card-link {
+        font-size: 12.5px;
+    }
+
+    /* ── Footer Section Mobile ──────────────────────────────────────── */
+    .footer {
+        padding: 20px 10px 0;
+    }
+
+    .footer__floating-container {
+        padding: 20px 0 10px;
+        border-radius: 12px;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer__brand-desc {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .footer__contact-sub,
+    .footer__contact-link {
+        font-size: 12px;
+    }
+
+    .footer__link {
+        font-size: 12px;
+    }
+
+    .footer__links-two-col {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .footer__newsletter-form {
+        flex-direction: column;
+    }
+
+    .footer__newsletter-input {
+        line-height: normal;
+        padding: 12px 12px;
+        font-size: 12px;
+    }
+
+    .footer__newsletter-btn {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px;
+        font-size: 12.5px;
+    }
+
+    .footer__bottom-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer__copyright {
+        font-size: 11.5px;
+        text-align: center;
+    }
+
+    .footer__legal-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 11.5px;
+    }
+}

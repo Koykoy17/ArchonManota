@@ -19,8 +19,7 @@
             </h2>
 
             <p class="services__intro-desc">
-                An excellent After-Sales Maintenance Service with state of the art facility and<br>
-                highly skilled After-Sales support team.
+                An excellent After-Sales Maintenance Service with state of the art facility and highly skilled After-Sales support team.
             </p>
         </div>
 
@@ -35,9 +34,7 @@
             <div class="services__card-content">
                 {{-- 2nd paragraph inside bg-service.png, above image+accordion --}}
                 <p class="services__card-desc">
-                    We will assign a dedicated After-Sales Representative to cater to your servicing needs.<br>
-                    A highly skilled mechanics are always ready to assist in all technical<br>
-                    concerns.
+                    We will assign a dedicated After-Sales Representative to cater to your servicing needs. A highly skilled mechanics are always ready to assist in all technical concerns.
                 </p>
 
                 {{-- Two-Column Row (Image Left, Accordion Right) --}}

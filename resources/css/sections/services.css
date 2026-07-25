@@ -70,16 +70,15 @@
     margin: 0 0 28px;
 }
 
-/* ── Card Area — bg-service.png wraps ONLY image + accordion row ── */
 .services__card-area {
     position: relative;
     border-radius: 28px;
-    padding: 14px 48px;
+    padding: 24px 36px;
     box-sizing: border-box;
     overflow: hidden;
-    /* Break out wider than the 1200px container — centered with equal side gaps */
-    margin-left: calc(-2 * var(--container-padding));
-    margin-right: calc(-2 * var(--container-padding));
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Decorative background shape (bg-service.png) — centered, filling card area */
@@ -165,14 +164,15 @@
     font-size: 24px;
     font-weight: 700;
     color: #ffffff;
-    display: flex;
-    gap: 8px;
-    align-items: center;
+    display: block;
+    line-height: 1.25;
 }
 
 .services__title-accent {
     color: #CB9F53;
     font-weight: 700;
+    display: inline;
+    margin-right: 4px;
 }
 
 .services__accordion-icon {
@@ -274,6 +274,77 @@
     }
 
     .services__card-area {
-        padding: 24px;
+        padding: 28px 24px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .services__accordion-title {
+        font-size: 18px;
+        display: block;
+    }
+
+    .services__title-accent {
+        display: block;
+        margin-bottom: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services__container {
+        padding: 0 20px;
+    }
+
+    .services__heading {
+        font-size: 22px;
+    }
+
+    .services__card-area {
+        padding: 20px 16px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 18px;
+    }
+
+    .services__card-desc {
+        text-align: right !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+
+    .services__image-col {
+        display: flex !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+        margin-bottom: 14px !important;
+    }
+
+    .services__img {
+        width: 130px !important;
+        height: 85px !important;
+        max-width: 130px !important;
+        border-radius: 14px !important;
+        object-fit: cover !important;
+        border: 2px solid #CB9F53 !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        display: block !important;
+    }
+
+    .services__accordion-title {
+        font-size: 16px;
+        display: block;
+        line-height: 1.35;
+    }
+
+    .services__title-accent {
+        display: block;
+        margin-bottom: 3px;
+        color: #CB9F53;
+    }
+
+    .services__accordion-header {
+        padding: 14px 12px;
     }
 }
