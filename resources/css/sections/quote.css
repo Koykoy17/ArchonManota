@@ -340,9 +340,9 @@
 
 .partners__container {
     position: relative;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
     border-radius: 40px;
-    padding: 42px 54px;
+    padding: 38px 54px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -350,8 +350,8 @@
 }
 
 .partners__title {
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 34px;
+    font-weight: 700;
     color: #ffffff;
     margin: 0;
     letter-spacing: -0.01em;
@@ -360,33 +360,25 @@
 .partners__logos {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 40px;
 }
 
 .partners__logo-item {
     position: relative;
     background-color: #151616;
-    padding: 0 16px;
-    margin-top: -150px;
-    /* Shifts larger logos upwards to break top border line */
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-top: -120px;
+    margin-bottom: -10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
 .partners__logo-img {
-    height: 74px;
+    height: 64px;
     width: auto;
-    object-fit: contain;
-}
-
-.partners__divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1px;
-}
-
-.partners__divider-img {
-    height: 1px;
-    width: 52px;
     object-fit: contain;
 }
 
@@ -403,6 +395,34 @@
     .quote__solutions-side {
         min-height: 320px;
     }
+
+    .partners {
+        margin-top: 60px;
+    }
+
+    .partners__container {
+        padding: 32px 28px;
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+        border-radius: 28px;
+    }
+
+    .partners__title {
+        font-size: 26px;
+    }
+
+    .partners__logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .partners__logo-item {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 8px 12px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -417,5 +437,22 @@
 
     .quote__title {
         font-size: 24px;
+    }
+
+    .partners {
+        margin-top: 40px;
+    }
+
+    .partners__container {
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .partners__title {
+        font-size: 22px;
+    }
+
+    .partners__logo-img {
+        height: 44px;
     }
 }
