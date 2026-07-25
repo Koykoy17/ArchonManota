@@ -19,7 +19,10 @@ class NewsletterController extends Controller
     public function subscribe(Request $request): RedirectResponse|JsonResponse
     {
         $validated = $request->validate([
-            'email' => ['required', 'email', 'max:255'],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:255'],
+        ], [
+            'email.required' => 'Email address is required.',
+            'email.email'    => 'Please enter a valid email address with an active domain.',
         ]);
 
         $email = strtolower(trim($validated['email']));

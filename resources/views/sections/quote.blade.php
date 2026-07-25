@@ -95,7 +95,7 @@ Controller: App\Http\Controllers\QuoteController@store
                             <div class="quote__field">
                                 <label for="quote-phone" class="quote__label">Phone Number</label>
                                 <input type="text" id="quote-phone" name="phone"
-                                    class="quote__input @error('phone') is-invalid @enderror" placeholder="09171234567"
+                                    class="quote__input @error('phone') is-invalid @enderror" placeholder="09XX XXX XXXX"
                                     value="{{ old('phone') }}" inputmode="numeric" maxlength="11"
                                     oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                                 @error('phone')

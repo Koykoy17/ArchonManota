@@ -23,10 +23,10 @@ class QuoteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'full_name'          => ['required', 'string', 'max:255'],
-            'email'              => ['required', 'email', 'max:255'],
+            'full_name'          => ['required', 'string', 'min:2', 'max:255', 'regex:/^[a-zA-Z\s\.\,\'\-]+$/'],
+            'email'              => ['required', 'string', 'email:rfc,dns', 'max:255'],
             'trucks'             => ['required', 'string', 'in:dump-truck,prime-mover,tractor,cargo,other'],
-            'phone'              => ['required', 'numeric', 'digits:11'],
+            'phone'              => ['required', 'string', 'regex:/^[0-9+\-\s()]+$/', 'min:7', 'max:15'],
             'additional_details' => ['nullable', 'string', 'max:1000'],
             'terms'              => ['accepted'],
         ];
@@ -41,13 +41,16 @@ class QuoteRequest extends FormRequest
     {
         return [
             'full_name.required' => 'Full name is required.',
+            'full_name.min'      => 'Full name must be at least 2 characters.',
+            'full_name.regex'    => 'Full name may only contain letters, spaces, and punctuation.',
             'email.required'     => 'Email address is required.',
-            'email.email'        => 'Please enter a valid email address.',
+            'email.email'        => 'Please enter a valid email address with an active domain.',
             'trucks.required'    => 'Please select a truck option.',
-            'trucks.in'          => 'Please select a valid option.',
+            'trucks.in'          => 'Please select a valid truck option.',
             'phone.required'     => 'Phone number is required.',
-            'phone.numeric'      => 'Phone number must contain only numbers.',
-            'phone.digits'       => 'Phone number must be exactly 11 digits (e.g. 09171234567).',
+            'phone.regex'        => 'Phone number must contain a valid number format.',
+            'phone.min'          => 'Phone number must be at least 7 digits.',
+            'phone.max'          => 'Phone number cannot exceed 15 digits.',
             'terms.accepted'     => 'You must accept the terms.',
         ];
     }
