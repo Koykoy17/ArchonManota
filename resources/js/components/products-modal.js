@@ -131,18 +131,93 @@ export function initProductsModal() {
 
     let currentCompareAId = 1;
     let currentCompareBId = 4;
+    let savedScrollY = 0;
 
     function openModal(modalEl) {
         if (!modalEl) return;
+
+        if (!document.body.classList.contains('modal-open')) {
+            savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+            document.documentElement.classList.add('modal-open');
+            document.body.classList.add('modal-open');
+        }
+
         modalEl.removeAttribute('hidden');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeModal(modalEl) {
         if (!modalEl) return;
         modalEl.setAttribute('hidden', '');
-        document.body.style.overflow = '';
+
+        const anyModalOpen = document.querySelector('.product-modal:not([hidden]), .legal-modal:not([hidden])');
+        if (!anyModalOpen) {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            document.documentElement.classList.remove('modal-open');
+            document.body.classList.remove('modal-open');
+            window.scrollTo(0, savedScrollY);
+        }
     }
+
+    function setupModalScrollGuard(modalEl) {
+        if (!modalEl) return;
+
+        modalEl.addEventListener('wheel', (e) => {
+            const scrollable = e.target.closest('.product-modal__content, .product-modal__compare-body');
+            if (!scrollable) {
+                e.preventDefault();
+                return;
+            }
+
+            const delta = e.deltaY;
+            const up = delta < 0;
+            const { scrollTop, scrollHeight, clientHeight } = scrollable;
+
+            if (up && scrollTop <= 0) {
+                e.preventDefault();
+            } else if (!up && scrollTop + clientHeight >= scrollHeight - 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        let startY = 0;
+        modalEl.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                startY = e.touches[0].clientY;
+            }
+        }, { passive: true });
+
+        modalEl.addEventListener('touchmove', (e) => {
+            const scrollable = e.target.closest('.product-modal__content, .product-modal__compare-body');
+            if (!scrollable) {
+                e.preventDefault();
+                return;
+            }
+
+            const currentY = e.touches[0].clientY;
+            const deltaY = startY - currentY;
+            const { scrollTop, scrollHeight, clientHeight } = scrollable;
+
+            if (deltaY < 0 && scrollTop <= 0) {
+                e.preventDefault();
+            } else if (deltaY > 0 && scrollTop + clientHeight >= scrollHeight - 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    }
+
+    setupModalScrollGuard(qvModal);
+    setupModalScrollGuard(cmpModal);
 
     // Populate Quick View Modal
     function openQuickView(productId) {
@@ -264,6 +339,14 @@ export function initProductsModal() {
 
     if (cmpClose) cmpClose.addEventListener('click', () => closeModal(cmpModal));
     if (cmpBackdrop) cmpBackdrop.addEventListener('click', () => closeModal(cmpModal));
+
+    // Prevent background scrolling when dragging/wheeling on backdrops
+    [qvBackdrop, cmpBackdrop].forEach(backdrop => {
+        if (backdrop) {
+            backdrop.addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
+            backdrop.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+        }
+    });
 
     // Slideshow Navigation for Compare Truck B
     if (cmpPrevBtn) {

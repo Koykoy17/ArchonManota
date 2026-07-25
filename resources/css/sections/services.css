@@ -307,28 +307,24 @@
     }
 
     .services__card-desc {
-        text-align: right !important;
-        margin-left: auto !important;
-        margin-right: 0 !important;
+        margin-bottom: 18px !important;
     }
 
     .services__image-col {
-        display: flex !important;
-        justify-content: flex-end !important;
+        display: block !important;
         width: 100% !important;
-        margin-bottom: 14px !important;
+        margin-bottom: 16px !important;
     }
 
     .services__img {
-        width: 130px !important;
-        height: 85px !important;
-        max-width: 130px !important;
-        border-radius: 14px !important;
+        width: 100% !important;
+        height: 180px !important;
+        max-width: 100% !important;
+        border-radius: 16px !important;
         object-fit: cover !important;
         border: 2px solid #CB9F53 !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-        margin-left: auto !important;
-        margin-right: 0 !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+        margin: 0 !important;
         display: block !important;
     }
 
