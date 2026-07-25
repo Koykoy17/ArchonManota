@@ -114,44 +114,82 @@
     box-shadow: 0 2px 8px rgba(157, 2, 17, 0.4);
 }
 
-/* ── Mobile Responsive ─────────────────────────────────────────── */
+/* ── Mobile Responsive Hamburger & Compact Dropdown ─────────────── */
 .navbar__hamburger {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    width: 26px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar__hamburger-bar {
     display: block;
     width: 100%;
-    height: 2px;
+    height: 2.5px;
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 4px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.2s ease,
+                background-color 0.2s ease;
+    transform-origin: center;
 }
 
-.navbar__mobile-menu {
-    display: none;
-    position: fixed;
-    top: 84px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #151616;
-    padding: var(--space-6);
-    z-index: calc(var(--z-navbar) - 1);
+/* Hamburger Morph Animation to 'X' */
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-bar:nth-child(1) {
+    transform: translateY(8.75px) rotate(45deg);
+    background-color: #CB9F53;
+}
+
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-bar:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
+}
+
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-bar:nth-child(3) {
+    transform: translateY(-8.75px) rotate(-45deg);
+    background-color: #CB9F53;
+}
+
+/* Compact Dropdown Menu Card (Not Full Screen) */
+.navbar__mobile-menu {
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: var(--container-padding, 1.25rem);
+    left: auto;
+    width: calc(100vw - 2.5rem);
+    max-width: 320px;
+    background: rgba(21, 22, 22, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 18px 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(203, 159, 83, 0.12);
+    z-index: var(--z-navbar);
+
+    /* Smooth Slide & Fade Transition */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px) scale(0.96);
+    transform-origin: top right;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.25s ease;
     pointer-events: none;
-    transition: opacity var(--transition-normal);
 }
 
 .navbar__mobile-menu--open {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
     pointer-events: auto;
 }
 
@@ -161,27 +199,48 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: 4px;
 }
 
 .navbar__mobile-nav-link {
-    font-size: 18px;
-    font-weight: 500;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.navbar__mobile-nav-link:hover,
+.navbar__mobile-nav-link.is-active {
+    background: rgba(203, 159, 83, 0.14);
+    color: #CB9F53;
+    transform: translateX(4px);
 }
 
 .navbar__mobile-cta {
-    display: block;
-    margin-top: var(--space-6);
-    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    padding: 12px 20px;
     text-align: center;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     color: #ffffff;
     background-color: #9D0211;
     border-radius: 50px;
     text-decoration: none;
+    box-shadow: 0 4px 15px rgba(157, 2, 17, 0.4);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.navbar__mobile-cta:hover {
+    background-color: #C40317;
+    transform: translateY(-1px);
 }
 
 @media (max-width: 992px) {

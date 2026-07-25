@@ -557,3 +557,49 @@ body.modal-open {
         font-size: 20px;
     }
 }
+
+/* ── Compare Check (✓) & Cross (✗) Badges ───────────────────────── */
+.cmp-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    margin-left: 8px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cmp-indicator--check {
+    background-color: rgba(16, 185, 129, 0.18);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.cmp-indicator--cross {
+    background-color: rgba(239, 68, 68, 0.16);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.cmp-indicator--equal {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cmp-tag--winner {
+    background: linear-gradient(135deg, #CB9F53 0%, #EFA632 100%) !important;
+    color: #151616 !important;
+    font-weight: 800 !important;
+    padding: 3px 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 14px rgba(203, 159, 83, 0.45) !important;
+    letter-spacing: 0.5px !important;
+}

@@ -61,7 +61,6 @@ export function initNavbar() {
         hamburger.setAttribute('aria-label', 'Close navigation menu');
         mobileMenu.classList.add('navbar__mobile-menu--open');
         mobileMenu.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('mobile-menu-open');
     }
 
     function closeMenu() {
@@ -70,7 +69,6 @@ export function initNavbar() {
         hamburger.setAttribute('aria-label', 'Open navigation menu');
         mobileMenu.classList.remove('navbar__mobile-menu--open');
         mobileMenu.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('mobile-menu-open');
     }
 
     hamburger.addEventListener('click', () => {

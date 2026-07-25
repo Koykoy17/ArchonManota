@@ -89,58 +89,59 @@
         </button>
 
     </div>{{-- /.navbar__inner --}}
+
+    {{-- ── Mobile Menu Dropdown Card ────────────────────────────────── --}}
+    <div id="navbar-mobile-menu"
+         class="navbar__mobile-menu"
+         role="dialog"
+         aria-label="Mobile navigation menu"
+         aria-modal="false"
+         aria-hidden="true">
+
+        <nav aria-label="Mobile primary navigation">
+            <ul class="navbar__mobile-nav" role="list">
+
+                <li class="navbar__mobile-nav-item">
+                    <a href="#about"
+                       class="navbar__mobile-nav-link"
+                       aria-label="Go to About Us section">
+                        About Us
+                    </a>
+                </li>
+
+                <li class="navbar__mobile-nav-item">
+                    <a href="#products"
+                       class="navbar__mobile-nav-link"
+                       aria-label="Go to Products section">
+                        Products
+                    </a>
+                </li>
+
+                <li class="navbar__mobile-nav-item">
+                    <a href="#services"
+                       class="navbar__mobile-nav-link"
+                       aria-label="Go to Services section">
+                        Services
+                    </a>
+                </li>
+
+                <li class="navbar__mobile-nav-item">
+                    <a href="#articles"
+                       class="navbar__mobile-nav-link"
+                       aria-label="Go to Articles section">
+                        Articles
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <a href="#quote"
+           class="navbar__mobile-cta"
+           aria-label="Get in Touch — Go to quote form">
+            Get in Touch
+        </a>
+
+    </div>{{-- /#navbar-mobile-menu --}}
+
 </header>
-
-{{-- ── Mobile Menu ──────────────────────────────────────────────── --}}
-<div id="navbar-mobile-menu"
-     class="navbar__mobile-menu"
-     role="dialog"
-     aria-label="Mobile navigation menu"
-     aria-modal="false"
-     aria-hidden="true">
-
-    <nav aria-label="Mobile primary navigation">
-        <ul class="navbar__mobile-nav" role="list">
-
-            <li class="navbar__mobile-nav-item">
-                <a href="#about"
-                   class="navbar__mobile-nav-link"
-                   aria-label="Go to About Us section">
-                    About Us
-                </a>
-            </li>
-
-            <li class="navbar__mobile-nav-item">
-                <a href="#products"
-                   class="navbar__mobile-nav-link"
-                   aria-label="Go to Products section">
-                    Products
-                </a>
-            </li>
-
-            <li class="navbar__mobile-nav-item">
-                <a href="#services"
-                   class="navbar__mobile-nav-link"
-                   aria-label="Go to Services section">
-                    Services
-                </a>
-            </li>
-
-            <li class="navbar__mobile-nav-item">
-                <a href="#articles"
-                   class="navbar__mobile-nav-link"
-                   aria-label="Go to Articles section">
-                    Articles
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-
-    <a href="#quote"
-       class="navbar__mobile-cta"
-       aria-label="Get in Touch — Go to quote form">
-        Get in Touch
-    </a>
-
-</div>{{-- /#navbar-mobile-menu --}}

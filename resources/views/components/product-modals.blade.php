@@ -99,7 +99,7 @@
                 {{-- Left Truck (Base Selection) --}}
                 <div class="product-modal__compare-col product-modal__compare-col--base">
                     <div class="product-modal__compare-card">
-                        <span class="product-modal__compare-tag">Selected Model</span>
+                        <span class="product-modal__compare-tag" id="compare-tag-a">Selected Model</span>
                         <img id="compare-img-a" src="" alt="" class="product-modal__compare-img">
                         <h4 id="compare-name-a" class="product-modal__compare-name">Howo v7-x Dump Truck</h4>
                         <span id="compare-cat-a" class="product-modal__compare-cat">Dump Truck / 6x4</span>
@@ -141,7 +141,7 @@
                     <div class="product-modal__compare-card">
                         <div class="product-modal__slideshow-controls">
                             <button type="button" class="product-modal__slide-btn" id="compare-prev-btn" aria-label="Previous truck">&lsaquo;</button>
-                            <span class="product-modal__compare-tag">Compare With</span>
+                            <span class="product-modal__compare-tag" id="compare-tag-b">Compare With</span>
                             <button type="button" class="product-modal__slide-btn" id="compare-next-btn" aria-label="Next truck">&rsaquo;</button>
                         </div>
 

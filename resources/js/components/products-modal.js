@@ -247,22 +247,12 @@ export function initProductsModal() {
         const img = document.getElementById('compare-img-a');
         const name = document.getElementById('compare-name-a');
         const cat = document.getElementById('compare-cat-a');
-        const engine = document.getElementById('compare-engine-a');
-        const hp = document.getElementById('compare-hp-a');
-        const payload = document.getElementById('compare-payload-a');
-        const trans = document.getElementById('compare-trans-a');
-        const axle = document.getElementById('compare-axle-a');
-        const fuel = document.getElementById('compare-fuel-a');
 
         if (img) img.src = prod.image;
         if (name) name.textContent = prod.name;
         if (cat) cat.textContent = prod.category;
-        if (engine) engine.textContent = prod.specs.engine;
-        if (hp) hp.textContent = prod.specs.hp;
-        if (payload) payload.textContent = prod.specs.payload;
-        if (trans) trans.textContent = prod.specs.trans;
-        if (axle) axle.textContent = prod.specs.axle;
-        if (fuel) fuel.textContent = prod.specs.fuel;
+
+        updateCompareIndicators();
     }
 
     // Populate Compare Column B
@@ -273,24 +263,95 @@ export function initProductsModal() {
         const img = document.getElementById('compare-img-b');
         const name = document.getElementById('compare-name-b');
         const cat = document.getElementById('compare-cat-b');
-        const engine = document.getElementById('compare-engine-b');
-        const hp = document.getElementById('compare-hp-b');
-        const payload = document.getElementById('compare-payload-b');
-        const trans = document.getElementById('compare-trans-b');
-        const axle = document.getElementById('compare-axle-b');
-        const fuel = document.getElementById('compare-fuel-b');
 
         if (img) img.src = prod.image;
         if (name) name.textContent = prod.name;
         if (cat) cat.textContent = prod.category;
-        if (engine) engine.textContent = prod.specs.engine;
-        if (hp) hp.textContent = prod.specs.hp;
-        if (payload) payload.textContent = prod.specs.payload;
-        if (trans) trans.textContent = prod.specs.trans;
-        if (axle) axle.textContent = prod.specs.axle;
-        if (fuel) fuel.textContent = prod.specs.fuel;
 
         if (cmpSelectB) cmpSelectB.value = String(prod.id);
+
+        updateCompareIndicators();
+    }
+
+    // Evaluate specs between Truck A and Truck B & render green check (✓) and red X (✗) badges
+    function updateCompareIndicators() {
+        const prodA = PRODUCTS_DATA[currentCompareAId];
+        const prodB = PRODUCTS_DATA[currentCompareBId];
+        if (!prodA || !prodB) return;
+
+        const hpA = parseInt(prodA.specs.hp, 10) || 0;
+        const hpB = parseInt(prodB.specs.hp, 10) || 0;
+
+        const payloadA = parseInt(prodA.specs.payload, 10) || 0;
+        const payloadB = parseInt(prodB.specs.payload, 10) || 0;
+
+        const transMatchA = prodA.specs.trans.match(/(\d+)-Speed/i);
+        const transMatchB = prodB.specs.trans.match(/(\d+)-Speed/i);
+        const transA = transMatchA ? parseInt(transMatchA[1], 10) : 0;
+        const transB = transMatchB ? parseInt(transMatchB[1], 10) : 0;
+
+        const fuelA = parseInt(prodA.specs.fuel, 10) || 0;
+        const fuelB = parseInt(prodB.specs.fuel, 10) || 0;
+
+        const engineRankA = prodA.specs.engine.includes('Euro V') || prodA.specs.engine.includes('MAN') ? 2 : 1;
+        const engineRankB = prodB.specs.engine.includes('Euro V') || prodB.specs.engine.includes('MAN') ? 2 : 1;
+
+        const axleRankA = prodA.specs.axle.includes('8x4') ? 2 : 1;
+        const axleRankB = prodB.specs.axle.includes('8x4') ? 2 : 1;
+
+        const metrics = [
+            { key: 'engine', valA: engineRankA, valB: engineRankB, textA: prodA.specs.engine, textB: prodB.specs.engine },
+            { key: 'hp', valA: hpA, valB: hpB, textA: prodA.specs.hp, textB: prodB.specs.hp },
+            { key: 'payload', valA: payloadA, valB: payloadB, textA: prodA.specs.payload, textB: prodB.specs.payload },
+            { key: 'trans', valA: transA, valB: transB, textA: prodA.specs.trans, textB: prodB.specs.trans },
+            { key: 'axle', valA: axleRankA, valB: axleRankB, textA: prodA.specs.axle, textB: prodB.specs.axle },
+            { key: 'fuel', valA: fuelA, valB: fuelB, textA: prodA.specs.fuel, textB: prodB.specs.fuel },
+        ];
+
+        let winsA = 0;
+        let winsB = 0;
+
+        metrics.forEach(m => {
+            const elA = document.getElementById(`compare-${m.key}-a`);
+            const elB = document.getElementById(`compare-${m.key}-b`);
+
+            if (m.valA > m.valB) {
+                winsA++;
+                if (elA) elA.innerHTML = `${m.textA} <span class="cmp-indicator cmp-indicator--check" title="Better Spec">✓</span>`;
+                if (elB) elB.innerHTML = `${m.textB} <span class="cmp-indicator cmp-indicator--cross" title="Lower Spec">✗</span>`;
+            } else if (m.valB > m.valA) {
+                winsB++;
+                if (elA) elA.innerHTML = `${m.textA} <span class="cmp-indicator cmp-indicator--cross" title="Lower Spec">✗</span>`;
+                if (elB) elB.innerHTML = `${m.textB} <span class="cmp-indicator cmp-indicator--check" title="Better Spec">✓</span>`;
+            } else {
+                if (elA) elA.innerHTML = `${m.textA} <span class="cmp-indicator cmp-indicator--equal" title="Equal Spec">=</span>`;
+                if (elB) elB.innerHTML = `${m.textB} <span class="cmp-indicator cmp-indicator--equal" title="Equal Spec">=</span>`;
+            }
+        });
+
+        // Update Top Winner Badges
+        const tagA = document.getElementById('compare-tag-a');
+        const tagB = document.getElementById('compare-tag-b');
+
+        if (tagA) {
+            if (winsA > winsB) {
+                tagA.className = 'product-modal__compare-tag cmp-tag--winner';
+                tagA.innerHTML = '★ HIGHER SPECIFICATION';
+            } else {
+                tagA.className = 'product-modal__compare-tag';
+                tagA.textContent = 'Selected Model';
+            }
+        }
+
+        if (tagB) {
+            if (winsB > winsA) {
+                tagB.className = 'product-modal__compare-tag cmp-tag--winner';
+                tagB.innerHTML = '★ HIGHER SPECIFICATION';
+            } else {
+                tagB.className = 'product-modal__compare-tag';
+                tagB.textContent = 'Compare Target';
+            }
+        }
     }
 
     function openCompare(productId) {
