@@ -80,6 +80,9 @@
     {{-- ── Terms & Privacy Legal Modal ──────────────────────────── --}}
     @include('components.legal-modal')
 
+    {{-- ── Featured Products Quick View & Compare Modals ────────── --}}
+    @include('components.product-modals')
+
     {{-- ── Page-level scripts (optional) ─────────────────────── --}}
     @stack('scripts')
 
