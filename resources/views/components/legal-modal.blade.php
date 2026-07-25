@@ -28,7 +28,6 @@
         </div>
 
         <div class="legal-modal__footer">
-            <button type="button" class="legal-modal__btn legal-modal__btn--secondary" id="legal-modal-decline">Close</button>
             <button type="button" class="legal-modal__btn legal-modal__btn--primary" id="legal-modal-agree">I Agree &amp; Accept</button>
         </div>
     </div>

@@ -43,9 +43,19 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 |
 */
 use App\Http\Controllers\BrochureController;
+use App\Http\Controllers\NewsletterController;
 
 Route::post('/quote', [QuoteController::class, 'store'])
     ->name('quote.store')
+    ->middleware('throttle:5,1');
+
+/*
+|--------------------------------------------------------------------------
+| Newsletter Subscription Route
+|--------------------------------------------------------------------------
+*/
+Route::post('/newsletter', [NewsletterController::class, 'subscribe'])
+    ->name('newsletter.subscribe')
     ->middleware('throttle:5,1');
 
 /*

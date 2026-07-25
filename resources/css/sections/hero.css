@@ -137,13 +137,11 @@
 }
 
 .hero__arrow--next {
-    margin-left: 240px;
-    /* Shifted RIGHTWARDS */
+    margin-left: 360px;
 }
 
 .hero__arrow--prev {
-    margin-left: 180px;
-    /* Shifted RIGHTWARDS */
+    margin-left: 300px;
 }
 
 .hero__arrow:hover {
@@ -155,7 +153,7 @@
     font-size: 15px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.75);
-    max-width: 360px;
+    max-width: 400px;
     margin: 0 0 1.25rem 0;
 }
 

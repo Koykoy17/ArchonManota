@@ -230,6 +230,10 @@
         -webkit-hyphens: auto !important;
     }
 
+    .hero__desc-br {
+        display: none;
+    }
+
     .hero__top-bar-text {
         font-size: 12px;
         line-height: 1.5;

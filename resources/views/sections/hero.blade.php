@@ -59,7 +59,9 @@
 
             {{-- Left Paragraph --}}
             <p class="hero__description">
-                Archon is the premier distributor of China's renowned brands, specializing in HOWO trucks and heavy equipment.
+                Archon is the premier distributor of<br class="hero__desc-br">
+                China's renowned brands, specializing<br class="hero__desc-br">
+                in HOWO trucks and heavy equipment.
             </p>
 
             {{-- Watch Video CTA (Gold Spec) --}}

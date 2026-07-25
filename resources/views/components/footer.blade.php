@@ -116,13 +116,15 @@
 
                     {{-- Brand --}}
                     <div class="footer__brand-col">
-                        <div class="footer__brand-logo">
+                        <a href="#home"
+                           class="footer__brand-logo"
+                           aria-label="Archon Special Machineries - Return to top hero section">
                             <img src="{{ asset('images/logos/archon-footer-logo.png') }}"
                                  alt="Archon Special Machineries Inc. logo badge"
                                  class="footer__brand-badge"
                                  loading="lazy"
                                  decoding="async">
-                        </div>
+                        </a>
                         <h4 class="footer__brand-name">ARCHON SPECIAL MACHINERIES INC.</h4>
                         <p class="footer__brand-desc">
                             is the leading distributor of trucks &amp; heavy equipment nationwide. We are a certified partner and dealer of SINOTRUK, the largest and number one manufacturer of trucks and heavy equipment in China.
@@ -133,8 +135,18 @@
 
                 {{-- Newsletter — below Quick Links + Brand --}}
                 <div class="footer__newsletter-container">
+                    @if (session('newsletter_success'))
+                        <div class="footer__newsletter-alert footer__newsletter-alert--success" role="alert">
+                            {{ session('newsletter_success') }}
+                        </div>
+                    @endif
+                    @error('email')
+                        <div class="footer__newsletter-alert footer__newsletter-alert--error" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="footer__newsletter-wrap">
-                        <form class="footer__newsletter-form" aria-label="Newsletter signup" action="#" method="POST">
+                        <form class="footer__newsletter-form" aria-label="Newsletter signup" action="{{ route('newsletter.subscribe') }}" method="POST">
                             @csrf
                             <label for="footer-email" class="sr-only">Email address</label>
                             <input
