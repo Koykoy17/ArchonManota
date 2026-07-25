@@ -96,10 +96,25 @@
             {{-- Compare Cards Container (2 columns) --}}
             <div class="product-modal__compare-grid">
 
-                {{-- Left Truck (Base Selection) --}}
+                {{-- Left Truck (Base Selection / Selector A) --}}
                 <div class="product-modal__compare-col product-modal__compare-col--base">
                     <div class="product-modal__compare-card">
-                        <span class="product-modal__compare-tag" id="compare-tag-a">Selected Model</span>
+                        <div class="product-modal__slideshow-controls">
+                            <span class="product-modal__compare-tag" id="compare-tag-a">Selected Model</span>
+                        </div>
+
+                        {{-- Dropdown Selector for Model A --}}
+                        <div class="product-modal__select-wrap">
+                            <select id="compare-select-a" class="product-modal__select">
+                                <option value="1">Howo v7-x Dump Truck</option>
+                                <option value="2">Howo v7 Dump Truck</option>
+                                <option value="3">Howo TX Dump Truck</option>
+                                <option value="4">Howo A7 | T7 Prime Mover</option>
+                                <option value="5">Howo 7 Prime Truck</option>
+                                <option value="6">Howo A7 | T7 Dump Truck</option>
+                            </select>
+                        </div>
+
                         <img id="compare-img-a" src="" alt="" class="product-modal__compare-img">
                         <h4 id="compare-name-a" class="product-modal__compare-name">Howo v7-x Dump Truck</h4>
                         <span id="compare-cat-a" class="product-modal__compare-cat">Dump Truck / 6x4</span>
@@ -130,13 +145,17 @@
                             <th>Fuel Capacity</th>
                             <td id="compare-fuel-a">400 L</td>
                         </tr>
+                        <tr>
+                            <th>Key Features</th>
+                            <td id="compare-features-a">Extended Sleeper Cab</td>
+                        </tr>
                     </table>
                 </div>
 
                 {{-- VS Divider Badge --}}
                 <div class="product-modal__vs-badge">VS</div>
 
-                {{-- Right Truck (Interactive Slideshow / Selector) --}}
+                {{-- Right Truck (Target Selection / Selector B) --}}
                 <div class="product-modal__compare-col product-modal__compare-col--target">
                     <div class="product-modal__compare-card">
                         <div class="product-modal__slideshow-controls">
@@ -186,6 +205,10 @@
                         <tr>
                             <th>Fuel Capacity</th>
                             <td id="compare-fuel-b">600 L Dual</td>
+                        </tr>
+                        <tr>
+                            <th>Key Features</th>
+                            <td id="compare-features-b">Air Suspension &amp; AMT</td>
                         </tr>
                     </table>
                 </div>

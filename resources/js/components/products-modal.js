@@ -124,6 +124,7 @@ export function initProductsModal() {
     const cmpModal = document.getElementById('product-compare-modal');
     const cmpBackdrop = document.getElementById('compare-backdrop');
     const cmpClose = document.getElementById('compare-close');
+    const cmpSelectA = document.getElementById('compare-select-a');
     const cmpSelectB = document.getElementById('compare-select-b');
     const cmpPrevBtn = document.getElementById('compare-prev-btn');
     const cmpNextBtn = document.getElementById('compare-next-btn');
@@ -252,6 +253,8 @@ export function initProductsModal() {
         if (name) name.textContent = prod.name;
         if (cat) cat.textContent = prod.category;
 
+        if (cmpSelectA) cmpSelectA.value = String(prod.id);
+
         updateCompareIndicators();
     }
 
@@ -328,6 +331,19 @@ export function initProductsModal() {
                 if (elB) elB.innerHTML = `${m.textB} <span class="cmp-indicator cmp-indicator--equal" title="Equal Spec">=</span>`;
             }
         });
+
+        // 7. Key Features (Row 7 at the bottom)
+        const featA = document.getElementById('compare-features-a');
+        const featB = document.getElementById('compare-features-b');
+        const featRankA = (prodA.specs.cabin.includes('Sleeper') || prodA.specs.cabin.includes('Luxury') || prodA.specs.trans.includes('AMT')) ? 2 : 1;
+        const featRankB = (prodB.specs.cabin.includes('Sleeper') || prodB.specs.cabin.includes('Luxury') || prodB.specs.trans.includes('AMT')) ? 2 : 1;
+
+        if (featA) {
+            featA.innerHTML = `${prodA.specs.cabin} <span class="cmp-indicator ${featRankA > featRankB ? 'cmp-indicator--check' : (featRankA < featRankB ? 'cmp-indicator--cross' : 'cmp-indicator--equal')}">${featRankA > featRankB ? '✓' : (featRankA < featRankB ? '✗' : '=')}</span>`;
+        }
+        if (featB) {
+            featB.innerHTML = `${prodB.specs.cabin} <span class="cmp-indicator ${featRankB > featRankA ? 'cmp-indicator--check' : (featRankB < featRankA ? 'cmp-indicator--cross' : 'cmp-indicator--equal')}">${featRankB > featRankA ? '✓' : (featRankB < featRankA ? '✗' : '=')}</span>`;
+        }
 
         // Update Top Winner Badges
         const tagA = document.getElementById('compare-tag-a');
@@ -429,6 +445,12 @@ export function initProductsModal() {
                 nextB = nextB + 1 > 6 ? 1 : nextB + 1;
             }
             renderCompareB(nextB);
+        });
+    }
+
+    if (cmpSelectA) {
+        cmpSelectA.addEventListener('change', (e) => {
+            renderCompareA(parseInt(e.target.value, 10));
         });
     }
 
